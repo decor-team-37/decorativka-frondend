@@ -10,9 +10,9 @@ import { NotFoundPage } from './pages/not.found.page';
 export const Root = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<App />}>
+      <Route path='/' element={<App />}>
         <Route index element={<HomePage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
   </Router>
