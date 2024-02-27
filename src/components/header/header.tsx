@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./header.scss";
 
@@ -8,17 +8,17 @@ export const Header = () => {
       <h1 className="header__logo">Header</h1>
 
       <nav className="header__nav">
-        <NavLink to="/">
+        <Link to="/">
           Home
-        </NavLink>
+        </Link>
 
-        <NavLink to="/cart">
+        <Link to="/cart">
           Cart
-        </NavLink>
+        </Link>
 
-        <NavLink to="/product">
+        <Link to="/product">
           Product
-        </NavLink>
+        </Link>
       </nav>
     </header>
   );
