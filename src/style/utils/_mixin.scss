@@ -17,3 +17,15 @@
     #{$property}: $toValue;
   }
 }
+
+@mixin paddingInlinePage() {
+  padding-inline: 18px;
+
+  @include onTablet() {
+    padding-inline: 70px;
+  }
+
+  @include onDesktop() {
+    padding-inline: 73px;
+  }
+}

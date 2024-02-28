@@ -2,12 +2,51 @@
   width: 25px;
   height: 25px;
 
-  @include onTablet {
-    width: 30px;
-    height: 30px;
-  }
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   &--hover {
     @include hover(transform, (scale(1.1)));
+  }
+
+  &__favorite {
+    background-image: url(../icons/favorite.svg);
+  }
+
+  &__cart {
+    background-image: url(../icons/cart.svg);
+  }
+
+  &__arrow-white {
+    background-image: url(../icons/arrow-white.svg);
+
+    width: 12px;
+    height: 12px;
+
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+    background-image: url(../icons/menu.svg);
+    height: 12px;
+
+    &--close {
+      background-image: url(../icons/close-menu.svg);
+      height: 18px;
+    }
+  }
+
+  &__arrow-blue {
+    background-image: url(../icons/arrow-blue.svg);
+
+    width: 12px;
+    height: 12px;
+
+    &--up {
+      transform: rotate(180deg);
+    }
   }
 }
