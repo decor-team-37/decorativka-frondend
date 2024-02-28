@@ -1,0 +1,141 @@
+@import '../../style/utils.scss';
+
+.footer {
+  padding: 56px 17px 21px 20px;
+  background-color: $main-black;
+  @extend %body-text;
+  color: $divider-color;
+
+  @include onTablet {
+    padding: 56px 68px 32px 73px;
+  }
+
+  @include onDesktop {
+    padding: 65px 73px 32px 69px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      gap: 148px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 56px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 181px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+  }
+
+  &__logo {
+    justify-content: center;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__list {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include onTablet {
+      gap: 16px;
+    }
+
+    @include onDesktop {
+      margin-top: 32px;
+    }
+  }
+
+  &__label {
+    display: block;
+    color: $secondary-color;
+    margin-bottom: 8px;
+  }
+
+ 
+
+  &__link {
+    display: block;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__link,
+  &__button {
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__button {
+    border: none;
+    
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+  }
+
+  &__bottom {
+    border-top: 1px solid $secondary-color;
+    padding: 24px 0px 27px 0px;
+    margin-top: 27px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+
+    @include onTablet {
+      padding: 24px 0px 0px 0px;
+      margin-top: 38px;
+
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+      margin-top: 64px;
+    }
+  }
+
+  &__icons-box {
+    display: flex;
+    gap: 24px;
+
+    @include onTablet {
+      gap: 54px;
+    }
+  }
+
+  &__copyright {
+    color: $white-text-color;
+  }
+}

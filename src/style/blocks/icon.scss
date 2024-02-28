@@ -1,4 +1,9 @@
 .icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
   width: 25px;
   height: 25px;
 
@@ -9,5 +14,17 @@
 
   &--hover {
     @include hover(transform, (scale(1.1)));
+  }
+
+  &--facebook {
+    background-image: url(../../../icons/facebook.svg);
+  }
+
+  &--tik-tok {
+    background-image: url(../../../icons/tik_tok.svg);
+  }
+
+  &--instagram {
+    background-image: url(../../../icons/instagram.svg);
   }
 }
