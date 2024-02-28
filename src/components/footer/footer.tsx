@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import './Footer.scss';
 import { Modal } from '../Modal/Modal';
 import { footerData } from '../../constants/footerData';
 import { ModalInfo } from '../../types/ModalInfo';
+import './Footer.scss';
 
 export const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState<ModalInfo>({
@@ -69,9 +69,12 @@ export const Footer = () => {
             <ul className='footer__list'>
               {footerData.map((el, index) => (
                 <li className='footer__item' key={index}>
-                  <Link to='#' className='footer__link' onClick={() => openModal(el.title, el.description)}>
+                  <button
+                    className='footer__button'
+                    onClick={() => openModal(el.title, el.description)}
+                  >
                     {el.title}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>

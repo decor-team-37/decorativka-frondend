@@ -79,11 +79,27 @@
     margin-bottom: 8px;
   }
 
+ 
+
   &__link {
     display: block;
     cursor: pointer;
 
     @include hover(transform, scale(1.1));
+  }
+
+  &__link,
+  &__button {
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__button {
+    border: none;
+    
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
   }
 
   &__bottom {
