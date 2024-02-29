@@ -19,13 +19,13 @@
 }
 
 @mixin paddingInlinePage() {
-  padding-inline: 18px;
+  padding-inline: 20px;
 
   @include onTablet() {
     padding-inline: 70px;
   }
 
   @include onDesktop() {
-    padding-inline: 73px;
+    padding-inline: 75px;
   }
 }

@@ -15,7 +15,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
 
   return (
     <header className='header'>
-      <div className='header__content'>
+      <div className='header__content content'>
         <nav className='header__nav'>
           <Link to='/'>
             <img src='../../../icons/logo.svg' alt='logo' className='logo' />

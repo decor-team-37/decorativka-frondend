@@ -4,7 +4,6 @@
   background-color: $main-black;
 
   &__content {
-    @include paddingInlinePage();
     padding-block: 10px;
 
     @include onTablet() {
