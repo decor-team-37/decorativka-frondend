@@ -1,17 +1,20 @@
 @import '../../style/utils.scss';
 
 .footer {
-  padding: 56px 17px 21px 20px;
   background-color: $main-black;
   @extend %body-text;
   color: $divider-color;
 
-  @include onTablet {
-    padding: 56px 68px 32px 73px;
-  }
+  &__content {
+    padding-block: 56px 27px;
 
-  @include onDesktop {
-    padding: 65px 73px 32px 69px;
+    @include onTablet {
+      padding-bottom: 32px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
   }
 
   &__top {
@@ -79,25 +82,22 @@
     margin-bottom: 8px;
   }
 
- 
+
 
   &__link {
     display: block;
     cursor: pointer;
 
-    @include hover(transform, scale(1.1));
   }
 
   &__link,
   &__button {
-    cursor: pointer;
     @include hover(transform, scale(1.1));
   }
 
   &__button {
     border: none;
-    
-    background-color: inherit;
+
     color: inherit;
     font-family: inherit;
   }
