@@ -3,7 +3,7 @@
 
   &--mobile {
     color: $white-text-color;
-    text-transform: uppercase; 
+    text-transform: uppercase;
   }
 
   &--h2 {
@@ -15,8 +15,22 @@
     }
   }
 
+  &--h3 {
+    @extend %h2-style;
+    color: $main-black;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+  }
+
   &--h4 {
     @extend %h4-style;
-    font-size: 13px;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+    color: $white-text-color;
+    text-transform: uppercase;
   }
 }

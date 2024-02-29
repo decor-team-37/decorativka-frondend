@@ -1,4 +1,6 @@
 # Project Name: 'Decorativka'.
+##TASK:
+  - Don`t forget to add links in footer;
 ## 1. Project Goal:
   - Implemented a web project - ....
 
