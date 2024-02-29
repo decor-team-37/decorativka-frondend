@@ -1,6 +1,11 @@
 @import '../../style/main.scss';
 
 .menu {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  
   background-color: $background-color;
 
   @include onTablet() {
