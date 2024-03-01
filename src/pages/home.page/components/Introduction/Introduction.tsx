@@ -1,24 +1,22 @@
-import './DecorIntroduction.scss';
+import './Introduction.scss';
 
-export const DecorIntroduction = () => {
+export const Introduction = () => {
   return (
-    <section className='decor-introduction'>
-
-
-      <div className="decor-introduction__content content">
-        <div className="decor-introduction__poster" />
+    <section className='introduction'>
+      <div className="introduction__content content">
+        <div className="introduction__poster" />
         
-        <div className="decor-introduction__info">
-          <h1 className="decor-introduction__title">
+        <div className="introduction__info">
+          <h1 className="introduction__title">
             Наші декоративні рішення зроблять ваш простір особливим
           </h1>
 
-          <p className="decor-introduction__description">
+          <p className="introduction__description">
             Наш дизайн перетворить будь-який інтер'єр у вишуканий образ,
             втілюючи ваші мрії в реальність
           </p>
 
-          <button className='decor-introduction__btn'>
+          <button className='introduction__btn'>
             Детальніше
           </button>
         </div>
