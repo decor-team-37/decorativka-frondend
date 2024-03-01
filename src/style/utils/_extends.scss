@@ -58,3 +58,10 @@
   line-height: 15px;
   color: $main-text-color;
 }
+
+%label {
+  @extend %h4-style;
+  color: $secondary-color;
+  text-transform: uppercase;
+  text-align: center;
+}

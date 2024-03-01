@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
 
-    padding: 32px 20px 40px;
+    padding-block: 32px 40px;
 
     @include onTablet() {
       flex-basis: 50%;
@@ -71,7 +71,7 @@
 
     @include onTablet() {
       text-align: left;
-      padding-right: 25px;
+      padding-inline: 0 25px;
     }
 
     @include onDesktop() {

@@ -32,12 +32,7 @@
   }
 
   &__label {
-    @extend %h4-style;
-
-    color: $secondary-color;
-
-    text-transform: uppercase;
-    text-align: center;
+    @extend %label;
 
     @include onTablet() {
       text-align: start;

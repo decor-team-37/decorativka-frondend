@@ -1,5 +1,6 @@
 import { About } from './components/About';
 import { DecorIntroduction } from './components/DecorIntroduction';
+import { Gallery } from './components/Gallery';
 
 import './home.page.scss';
 
@@ -8,7 +9,8 @@ export const HomePage = () => {
     <main className='home-page'>
       <DecorIntroduction />
       <About />
-      <About />
+      <Gallery />
+      <div></div>
     </main>
   );
 };
