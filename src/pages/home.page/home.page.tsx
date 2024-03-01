@@ -1,9 +1,11 @@
+import { DecorIntroduction } from './components/DecorIntroduction';
+
+import './home.page.scss';
+
 export const HomePage = () => {
   return (
-    <div className='home-page'>
-      <h1>
-        HomePage
-      </h1>
-    </div>
+    <main className='home-page'>
+      <DecorIntroduction />
+    </main>
   );
 };
