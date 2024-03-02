@@ -3,7 +3,7 @@ import './Introduction.scss';
 export const Introduction = () => {
   return (
     <section className='introduction'>
-      <div className="introduction__content content">
+      <div className="introduction__content">
         <div className="introduction__poster" />
         
         <div className="introduction__info">
