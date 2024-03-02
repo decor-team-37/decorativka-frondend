@@ -1,18 +1,19 @@
-@import '../../style/utils.scss';
+@import '../../style/utils';
 
 .footer {
   background-color: $main-black;
-  @extend %body-text;
   color: $divider-color;
+
+  @extend %body-text;
 
   &__content {
     padding-block: 56px 27px;
 
-    @include onTablet {
+    @include on-tablet {
       padding-bottom: 32px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-top: 32px;
     }
   }
@@ -22,11 +23,11 @@
     flex-direction: column;
     gap: 46px;
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       gap: 148px;
     }
   }
@@ -36,12 +37,12 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 56px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-template-columns: repeat(2, 1fr);
       column-gap: 181px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
     }
@@ -56,7 +57,7 @@
     flex-direction: column;
     text-align: center;
 
-    @include onTablet {
+    @include on-tablet {
       text-align: left;
     }
   }
@@ -67,11 +68,11 @@
     flex-direction: column;
     gap: 8px;
 
-    @include onTablet {
+    @include on-tablet {
       gap: 16px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       margin-top: 32px;
     }
   }
@@ -104,7 +105,7 @@
 
   &__bottom {
     border-top: 1px solid $secondary-color;
-    padding: 24px 0px 27px 0px;
+    padding: 24px 0 27px;
     margin-top: 27px;
 
     display: flex;
@@ -112,15 +113,15 @@
     gap: 32px;
     align-items: center;
 
-    @include onTablet {
-      padding: 24px 0px 0px 0px;
+    @include on-tablet {
+      padding: 24px 0 0;
       margin-top: 38px;
 
       flex-direction: row-reverse;
       justify-content: space-between;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-top: 32px;
       margin-top: 64px;
     }
@@ -130,7 +131,7 @@
     display: flex;
     gap: 24px;
 
-    @include onTablet {
+    @include on-tablet {
       gap: 54px;
     }
   }

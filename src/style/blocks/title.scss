@@ -7,30 +7,33 @@
   }
 
   &--h2 {
-    @extend %h2-style;
     color: $main-black;
 
-    @include onTablet {
+    @extend %h2-style;
+
+    @include on-tablet {
       font-size: 40px;
     }
   }
 
   &--h3 {
-    @extend %h2-style;
     color: $main-black;
 
-    @include onTablet {
+    @extend %h2-style;
+
+    @include on-tablet {
       font-size: 40px;
     }
   }
 
   &--h4 {
-    @extend %h4-style;
-
-    @include onDesktop {
-      font-size: 16px;
-    }
     color: $white-text-color;
     text-transform: uppercase;
+
+    @extend %h4-style;
+
+    @include on-desktop {
+      font-size: 16px;
+    }
   }
 }

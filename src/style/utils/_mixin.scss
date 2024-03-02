@@ -1,10 +1,10 @@
-@mixin onTablet {
+@mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin onDesktop {
+@mixin on-desktop {
   @media (min-width: $tablet-min-desktop) {
     @content;
   }
@@ -12,20 +12,19 @@
 
 @mixin hover($property, $toValue) {
   transition: #{$property} 0.3s;
-
   &:hover {
     #{$property}: $toValue;
   }
 }
 
-@mixin paddingInlinePage() {
+@mixin padding-inline-page {
   padding-inline: 20px;
 
-  @include onTablet() {
+  @include on-tablet {
     padding-inline: 70px;
   }
 
-  @include onDesktop() {
+  @include on-desktop {
     padding-inline: 75px;
   }
 }

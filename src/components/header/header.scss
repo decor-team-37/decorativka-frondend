@@ -1,4 +1,4 @@
-@import '../../style/main.scss';
+@import '../../style/main';
 
 .header {
   background-color: $main-black;
@@ -6,7 +6,7 @@
   &__content {
     padding-block: 10px;
 
-    @include onTablet() {
+    @include on-tablet {
       padding-block: 17px;
     }
   }
@@ -19,12 +19,12 @@
   &__categorys {
     display: none;
 
-    @include onTablet() {
+    @include on-tablet {
       display: flex;
       align-items: center;
     }
 
-    @include onDesktop() {
+    @include on-desktop {
       gap: 40px;
     }
   }
@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
 
-    @include onTablet() {
+    @include on-tablet {
       gap: 10px;
     }
   }
@@ -84,7 +84,7 @@
   }
 
   &__menu {
-    @include onTablet() {
+    @include on-tablet {
       display: none;
     }
   }
