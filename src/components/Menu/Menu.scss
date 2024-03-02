@@ -1,15 +1,16 @@
-@import '../../style/main.scss';
+@import '../../style/main';
 
 .menu {
   background-color: $background-color;
 
-  @include onTablet() {
+  @include on-tablet {
     display: none;
   }
 
   &__content {
-    @include paddingInlinePage();
     padding-block: 10px;
+
+    @include padding-inline-page;
   }
 
   &__category-btn {
@@ -37,7 +38,7 @@
   }
 
   &__subcategory-item {
-    padding: 6px 24px 6px 24px;
+    padding: 6px 24px;
   }
 
   &__subcategory-name {

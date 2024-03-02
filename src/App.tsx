@@ -10,12 +10,9 @@ export const App = () => {
   const [isMenu, setIsMenuActive] = useState(false);
 
   return (
-    <div className='App'>
-      <Header 
-        isMenu={isMenu}
-        toggleMenu={setIsMenuActive}
-      />
-      { isMenu && <Menu /> }
+    <div className="App">
+      <Header isMenu={isMenu} toggleMenu={setIsMenuActive} />
+      {isMenu && <Menu />}
       <Outlet />
       <Footer />
     </div>
