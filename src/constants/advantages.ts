@@ -1,4 +1,6 @@
-export const advantages = [
+import { SlideData } from "../types/SlideData";
+
+export const advantages: SlideData[] = [
   {
     id: 0,
     img: './img/advantages/01.png',

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Advantage } from '../../../../../types/Advantage';
+import { SlideData } from '../../../../../types/SlideData';
 import './Advantage.scss';
 
 type Props = {
-  slide: Advantage,
+  slide: SlideData,
   handleBtnNext: () => void,
   handleBtnPrev: () => void,
 };
@@ -36,11 +36,22 @@ export const AdvantageItem: React.FC<Props> = (
 
         <div className="advantage__control">
           <button onClick={handleBtnPrev} className="advantage__btn">
-            <div className="icon icon__arrow-button-black" />
+            <div
+              className="
+                icon 
+                icon__arrow-button
+                icon__arrow-button--black"
+            />
           </button>
 
           <button onClick={handleBtnNext} className="advantage__btn">
-            <div className="icon icon__arrow-button-black icon__arrow-button-black--rigth" />
+            <div
+              className="
+                icon 
+                icon__arrow-button 
+                icon__arrow-button--black
+                icon__arrow-button--rigth"
+            />
           </button>
         </div>
       </div>

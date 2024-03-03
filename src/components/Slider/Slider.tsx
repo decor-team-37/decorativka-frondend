@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { advantages } from '../../constants/advantages';
-import { Advantage } from '../../types/Advantage';
+import { SlideData } from '../../types/SlideData';
 
 import './Slider.scss';
 
+
 type SlideProps = {
-  slide: Advantage,
+  slide: SlideData,
   handleBtnNext: () => void,
   handleBtnPrev: () => void,
 }
 
 type Props = {
   Slide: React.FC<SlideProps>,
-  slides: Advantage[],
+  slides: SlideData[],
   classParent: string,
 };
 

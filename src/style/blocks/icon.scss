@@ -67,8 +67,15 @@
     background-image: url(../icons/instagram.svg);
   }
 
-  &__arrow-button-black {
-    background-image: url(../icons/arrow-button-black.svg);
+  &__arrow-button {
+    &--white {
+      background-image: url(../icons/arrow-button-white.svg);
+    }
+
+    &--black {
+      background-image: url(../icons/arrow-button-black.svg);
+    }
+    
     width: 35%;
 
     &--rigth {
