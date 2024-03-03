@@ -17,22 +17,4 @@
 
     margin-bottom: 24px;
   }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
-
-    @include onTablet() {
-      flex-direction: row;
-      overflow: hidden;
-    }
-  }
-
-  &__item {
-    @include onTablet() {
-      flex: 0 0 100%;
-      transition: translate 500ms;
-    }
-  }
 }

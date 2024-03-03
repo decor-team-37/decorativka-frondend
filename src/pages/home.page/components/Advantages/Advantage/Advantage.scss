@@ -6,6 +6,10 @@
     display: flex;
   }
 
+  @include onDesktop() {
+    margin-inline: 105px;
+  }
+
   &__img {
     width: 100%;
     aspect-ratio: 1;
@@ -71,10 +75,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 36px;
     height: 36px;
-  
+
     border: 0.52px solid $divider-color;
     border-radius: 50%;
 

@@ -4,13 +4,13 @@ import { Advantage } from '../../../../../types/Advantage';
 import './Advantage.scss';
 
 type Props = {
-  advantage: Advantage,
+  slide: Advantage,
   handleBtnNext: () => void,
-  handleBtnPrev: () => void
+  handleBtnPrev: () => void,
 };
 
 export const AdvantageItem: React.FC<Props> = (
-  { advantage,
+  { slide,
     handleBtnNext,
     handleBtnPrev,
   }) => {
@@ -19,17 +19,17 @@ export const AdvantageItem: React.FC<Props> = (
     <article className='advantage'>
       <img
         className='advantage__img'
-        src={advantage.img}
-        alt={advantage.title}
+        src={slide.img}
+        alt={slide.title}
       />
 
       <div className="advantage__info">
         <h3 className="advantage__title">
-          {advantage.title}
+          {slide.title}
         </h3>
 
         <p className="advantage__text">
-          {advantage.text}
+          {slide.text}
         </p>
 
         <div className="advantage__separator" />
