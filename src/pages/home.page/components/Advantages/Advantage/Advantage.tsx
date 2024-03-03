@@ -5,9 +5,15 @@ import './Advantage.scss';
 
 type Props = {
   advantage: Advantage,
+  handleBtnNext: () => void,
+  handleBtnPrev: () => void
 };
 
-export const AdvantageItem: React.FC<Props> = ({ advantage }) => {
+export const AdvantageItem: React.FC<Props> = (
+  { advantage,
+    handleBtnNext,
+    handleBtnPrev,
+  }) => {
 
   return (
     <article className='advantage'>
@@ -26,13 +32,15 @@ export const AdvantageItem: React.FC<Props> = ({ advantage }) => {
           {advantage.text}
         </p>
 
+        <div className="advantage__separator" />
+
         <div className="advantage__control">
-          <button className="advantage__btn">
-            <div className="icon icon__cart" />
+          <button onClick={handleBtnPrev} className="advantage__btn">
+            <div className="icon icon__arrow-button-black" />
           </button>
 
-          <button className="advantage__btn">
-            <div className="icon icon__cart" />
+          <button onClick={handleBtnNext} className="advantage__btn">
+            <div className="icon icon__arrow-button-black icon__arrow-button-black--rigth" />
           </button>
         </div>
       </div>

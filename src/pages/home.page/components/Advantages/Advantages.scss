@@ -1,10 +1,7 @@
 @import '../../../../style/main.scss';
 
 .advantages {
-
   &__content {
-    overflow: hidden;
-
     @include onDesktop() {
       padding-inline: 290px;
     }
@@ -25,21 +22,17 @@
     display: flex;
     flex-direction: column;
     row-gap: 8px;
-    transition: transform 1s;
 
     @include onTablet() {
       flex-direction: row;
-      column-gap: 70px;
-    }
-
-    @include onDesktop() {
-      column-gap: 290px;
+      overflow: hidden;
     }
   }
 
   &__item {
     @include onTablet() {
       flex: 0 0 100%;
+      transition: translate 500ms;
     }
   }
 }

@@ -43,6 +43,20 @@
     @extend %body-text;
   }
 
+  &__separator {
+    display: none;
+
+    @include onTablet() {
+      display: block;
+      margin-block: 0 15px;
+      border: 1px solid $divider-color;
+    }
+
+    @include onDesktop() {
+      margin-block: 30px;
+    }
+  }
+
   &__control {
     display: none;
 
@@ -50,14 +64,25 @@
       display: flex;
       justify-content: end;
       gap: 15px;
-      margin-top: 15px;
     }
   }
 
   &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     width: 36px;
     height: 36px;
+  
     border: 0.52px solid $divider-color;
     border-radius: 50%;
+
+    @include hover(background-color, $divider-color);
+
+    @include onDesktop() {
+      width: 70px;
+      height: 70px;
+    }
   }
 }
