@@ -5,6 +5,7 @@ import { Advantages } from './components/Advantages';
 
 import './home.page.scss';
 import { Services } from './components/Services';
+import { Products } from './components/Products';
 
 export const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ export const HomePage = () => {
       <Services />
       <Gallery />
       <Advantages />
+      <Products />
       <div></div>
     </main>
   );

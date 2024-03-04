@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { advantages } from '../../constants/advantages';
 import { SlideData } from '../../types/SlideData';
 
 import './Slider.scss';
@@ -22,13 +21,13 @@ export const Slider: React.FC<Props> = ({ Slide, slides, classParent }) => {
 
   const nextSlide = () => {
     setImageIndex(currentIndex => (
-      currentIndex === advantages.length - 1 ? 0 : currentIndex + 1
+      currentIndex === slides.length - 1 ? 0 : currentIndex + 1
     ))
   };
 
   const prevSlide = () => {
     setImageIndex(currentIndex => (
-      currentIndex === 0 ? advantages.length - 1 : currentIndex - 1
+      currentIndex === 0 ? slides.length - 1 : currentIndex - 1
     ))
   };
 

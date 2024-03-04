@@ -11,6 +11,7 @@
 
   @include onDesktop() {
     margin-inline: 105px;
+    gap: 130px;
   }
 
   &__img {
@@ -47,11 +48,15 @@
 
     @include onTablet() {
       position: absolute;
-      top: 24px;
+      top: 20px;
       right: 0;
       display: flex;
       justify-content: end;
       gap: 15px;
+    }
+
+    @include onDesktop() {
+      top: 24px;
     }
   }
 

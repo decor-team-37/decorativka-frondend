@@ -24,7 +24,7 @@ export const SlideFirst: React.FC<Props> = (
       />
 
       <div className="slide-first__info">
-        <h4 className="slide-first__label">Послуги</h4>
+        <h4 className="slide-first__label">{slide.label}</h4>
 
         <div className="slide-first__control">
           <button onClick={handleBtnPrev} className="slide-first__btn">

@@ -1,0 +1,9 @@
+@import '../../../../style/main.scss';
+
+.products {
+  background-color: $main-black;
+
+  &__content {
+    padding-block: 40px;
+  }
+}
