@@ -1,30 +1,15 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Modal } from '../Modal/Modal';
 import { footerData } from '../../constants/footerData';
-import { ModalInfo } from '../../types/ModalInfo';
 import './Footer.scss';
 
 export const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState<ModalInfo>({
-    status: false,
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [description, setDescription] = useState({
     title: '',
     description: '',
   });
-
-  const openModal = (title: string, description: string) => {
-    setIsModalOpen({
-      status: true,
-      title,
-      description,
-    });
-  };
-
-  const closeModal = () => {
-    setIsModalOpen({
-      status: false,
-    });
-  };
 
   return (
     <footer className="footer">
@@ -83,13 +68,19 @@ export const Footer = () => {
                     <button
                       type="button"
                       className="footer__button"
-                      onClick={() => openModal(el.title, el.description)}
+                      onClick={() => {
+                        setIsModalOpen(true);
+                        setDescription({
+                          title: el.title,
+                          description: el.description,
+                        });
+                      }}
                     >
                       {el.title}
                     </button>
                   </li>
                 ))}
-                <Link to="#" className="footer__link">
+                <Link to="/cooperation" className="footer__link">
                   Співпраця
                 </Link>
               </ul>
@@ -157,7 +148,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <Modal modalInfo={isModalOpen} closeModal={closeModal} />
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          text={description}
+        />
       </div>
     </footer>
   );

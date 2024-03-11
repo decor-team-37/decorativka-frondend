@@ -1,0 +1,17 @@
+@import '../../style/utils';
+
+.cooperation {
+  padding-block: 24px 13px;
+}
+
+.page-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @extend %title;
+
+  font-size: 16px;
+  line-height: 21px;
+  color: $breadcrumbs-color;
+}
