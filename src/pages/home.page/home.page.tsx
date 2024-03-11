@@ -2,11 +2,11 @@ import { About } from './components/About';
 import { Introduction } from './components/Introduction';
 import { Gallery } from './components/Gallery';
 import { Advantages } from './components/Advantages';
-
-import './home.page.scss';
 import { Services } from './components/Services';
 import { Products } from './components/Products';
-import { FormPage } from '../../components/FormPage';
+import { FormHome } from './components/FormHome';
+
+import './home.page.scss';
 
 export const HomePage = () => {
   return (
@@ -17,7 +17,7 @@ export const HomePage = () => {
       <Gallery />
       <Advantages />
       <Products />
-      <FormPage formVersion="consultation" />
+      <FormHome />
     </main>
   );
 };
