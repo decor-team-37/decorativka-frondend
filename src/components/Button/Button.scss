@@ -1,0 +1,74 @@
+@import '../../style/utils';
+
+.Button {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+
+  &:hover {
+    .Button__text {
+      transform: translateX(-10px);
+      transition: 0.3s;
+    }
+
+    .Button__arrow {
+      transform: translateX(10px);
+      transition: 0.3s;
+    }
+  }
+
+  @extend %button;
+
+  @include on-tablet {
+    height: 60px;
+    font-size: 20px;
+  }
+
+  &--primary {
+    background-color: $main-black;
+    color: $white-text-color-button;
+
+    &:hover {
+      box-shadow: 4px 4px 8px 0 #00000040;
+    }
+
+    &:active {
+      background-color: $white-text-color-button;
+      color: $main-black;
+      border: 1px solid $main-black;
+    }
+
+    &-disabled {
+      background-color: $secondary-color;
+      color: $white-text-color-button;
+      border: none;
+    }
+  }
+
+  &--secondary {
+    color: $main-black;
+    background-color: $white-text-color-button;
+    border: 1px solid $main-black;
+
+    &__arrow {
+      font-family: none;
+      font-size: 26px;
+    }
+
+    &:hover {
+      color: $white-text-color;
+      background-color: $main-black;
+      border: none;
+    }
+
+    &:active {
+      background-color: $white-text-color-button;
+      color: $main-black;
+      border: 1px solid $secondary-color;
+    }
+  }
+}
