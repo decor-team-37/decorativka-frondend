@@ -75,4 +75,24 @@
     width: 10px;
     height: 10px;
   }
+
+  &__arrow-button {
+    &--white {
+      background-image: url(../icons/arrow-button-white.svg);
+    }
+
+    &--black {
+      background-image: url(../icons/arrow-button-black.svg);
+    }
+
+    width: 35%;
+
+    &--rigth {
+      transform: rotate(180deg);
+    }
+  }
 }
+
+
+
+

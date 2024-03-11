@@ -1,6 +1,12 @@
 @import '../../style/main';
 
 .menu {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  
   background-color: $background-color;
 
   @include on-tablet {

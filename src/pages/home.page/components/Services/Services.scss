@@ -1,0 +1,9 @@
+@import '../../../../style/main.scss';
+
+.services {
+  background-color: $main-black;
+
+  &__content {
+    padding-block: 40px;
+  }
+}
