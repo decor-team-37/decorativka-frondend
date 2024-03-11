@@ -1,3 +1,4 @@
+import { Button } from '../../../../components/Button';
 import './Introduction.scss';
 
 export const Introduction = () => {
@@ -12,11 +13,13 @@ export const Introduction = () => {
           </h1>
 
           <p className="introduction__description">
-            Наш дизайн перетворить будь-який інтер'єр у вишуканий образ,
+            Наш дизайн перетворить будь-який інтер&apos;єр у вишуканий образ,
             втілюючи ваші мрії в реальність
           </p>
 
-          <button className="introduction__btn">Детальніше</button>
+          <Button type="button" $secondary $primary isValid>
+            Детальніше
+          </Button>
         </div>
       </div>
     </section>
