@@ -1,19 +1,54 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormPage } from '../../components/FormPage';
 import './cooperation.scss';
+
+enum NameLinks {
+  HomePage = 'Головна',
+  Cooperation = 'Співпраця',
+  /*   Cooperation = 'Шпалери',
+    Cooperation = 'Фарби',
+    Cooperation = 'Контакти',
+    Cooperation = 'Про нас',
+    Cooperation = 'Нанесення декоративного покриття',
+    Cooperation = 'Оформити замовлення', */
+}
+
+type Props = {
+  children: React.ReactNode;
+  previousLink?: NameLinks;
+};
+
+const PageNavigation: React.FC<Props> = ({ children, previousLink }) => {
+  return (
+    <div className="page-navigation">
+      <Link to="/" className="page-navigation__link ">
+        <div className="icon icon__arrow-navigation" />
+        Головна
+      </Link>
+
+      {previousLink && (
+        <>
+          <div className="icon icon__elipse" />
+          <Link to="/" className="page-navigation__link ">
+            {previousLink}
+          </Link>
+        </>
+      )}
+      <div className="icon icon__elipse" />
+
+      <p className="page-navigation__actual-link"> {children} </p>
+    </div>
+  );
+};
 
 export const Cooperation = () => {
   return (
     <div className="cooperation">
       <div className="content">
-        <div className="page-navigation">
-          <div className="icon icon__arrow-navigation" />
-          <Link to="/" className="page-navigation__link ">
-            Головна
-          </Link>
-          <div className="icon icon__elipse" />
-          <p className="page-navigation__actual-link"> Співпраця </p>
-        </div>
+        <PageNavigation previousLink={NameLinks.Cooperation}>
+          {NameLinks.Cooperation}
+        </PageNavigation>
 
         <div className="cooperation__title">
           <h2 className="title title--h2">
@@ -21,7 +56,13 @@ export const Cooperation = () => {
           </h2>
 
           <p>
-            {/*  {`Запрошуємо талановитих дизайнерів і майстрів приєднатися до нашої команди для спільного розвитку та успішних проєктів! Ми пропонуємо широкий вибір декоративної штукатурки, шпалер, фарб та фотошпалер від провідних виробників. Ми цінуємо вашу креативність і професіоналізм, тому пропонуємо вам взаємовигідні умови співпраці, що включають конкурентну винагороду, підтримку та можливості для особистого зростання.`} */}
+            Приглашаем талантливых дизайнеров и мастеров присоединиться к нашей
+            команде для совместного развития и успешных проектов! Мы предлагаем
+            широкий выбор декоративной штукатурки, обоев, красок и фотообоев от
+            ведущих производителей. Мы ценим вашу креативность и
+            профессионализм, поэтому предлагаем вам взаимовыгодные условия
+            сотрудничества, включая конкурентное вознаграждение, поддержку и
+            возможности для
           </p>
         </div>
 
