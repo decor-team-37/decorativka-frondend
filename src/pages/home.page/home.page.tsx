@@ -1,7 +1,23 @@
+import { About } from './components/About';
+import { Introduction } from './components/Introduction';
+import { Gallery } from './components/Gallery';
+import { Advantages } from './components/Advantages';
+
+import './home.page.scss';
+import { Services } from './components/Services';
+import { Products } from './components/Products';
+import { FormPage } from '../../components/FormPage';
+
 export const HomePage = () => {
   return (
-    <div className="home-page">
-      <h1>HomePage</h1>
-    </div>
+    <main className="home-page">
+      <Introduction />
+      <About />
+      <Services />
+      <Gallery />
+      <Advantages />
+      <Products />
+      <FormPage formVersion="consultation" />
+    </main>
   );
 };
