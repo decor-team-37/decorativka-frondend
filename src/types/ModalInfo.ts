@@ -1,5 +1,8 @@
 export interface ModalInfo {
-  status: boolean;
-  title?: string;
-  description?: string;
+  isOpen: boolean;
+  onClose: () => void;
+  text?: {
+    title: string;
+    description: string;
+  };
 }
