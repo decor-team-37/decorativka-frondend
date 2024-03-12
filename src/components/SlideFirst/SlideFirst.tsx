@@ -4,6 +4,7 @@ import React from 'react';
 import './SlideFirst.scss';
 import { SlideData } from '../../types/SlideData';
 import { Button } from '../Button';
+import { ControlsButtons } from '../ControlsButtons';
 
 type Props = {
   slide: SlideData;
@@ -24,32 +25,11 @@ export const SlideFirst: React.FC<Props> = ({
         <h4 className="slide-first__label">{slide.label}</h4>
 
         <div className="slide-first__control">
-          <button
-            type="button"
-            onClick={handleBtnPrev}
-            className="slide-first__btn"
-          >
-            <div
-              className="
-                icon
-                icon__arrow-button
-                icon__arrow-button--white"
-            />
-          </button>
-
-          <button
-            type="button"
-            onClick={handleBtnNext}
-            className="slide-first__btn"
-          >
-            <div
-              className="
-                icon
-                icon__arrow-button
-                icon__arrow-button--white
-                icon__arrow-button--rigth"
-            />
-          </button>
+          <ControlsButtons
+            color="white"
+            handleBtnNext={handleBtnNext}
+            handleBtnPrev={handleBtnPrev}
+          />
         </div>
 
         <h2 className="slide-first__title">{slide.title}</h2>

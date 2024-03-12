@@ -61,34 +61,11 @@
     }
   }
 
-  // винести у компонент щоб не дублювати
   &__control {
     display: none;
 
     @include on-tablet {
-      display: flex;
-      justify-content: end;
-      gap: 15px;
-    }
-  }
-
-  // винести у компонент щоб не дублювати
-  &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 36px;
-    height: 36px;
-
-    border: 0.52px solid $divider-color;
-    border-radius: 50%;
-
-    @include hover(background-color, $divider-color);
-
-    @include on-desktop {
-      width: 70px;
-      height: 70px;
+      display: block;
     }
   }
 }

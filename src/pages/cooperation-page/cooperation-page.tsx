@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FormPage } from '../../components/FormPage';
-import './cooperation.scss';
+import './cooperation-page.scss';
 
 export const Cooperation = () => {
   return (

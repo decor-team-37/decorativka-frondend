@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 
 import { SlideData } from '../../../../../types/SlideData';
 import './Advantage.scss';
+import { ControlsButtons } from '../../../../../components/ControlsButtons';
 
 type Props = {
   slide: SlideData;
@@ -26,24 +28,11 @@ export const AdvantageItem: React.FC<Props> = ({
         <div className="advantage__separator" />
 
         <div className="advantage__control">
-          <button onClick={handleBtnPrev} className="advantage__btn">
-            <div
-              className="
-                icon 
-                icon__arrow-button
-                icon__arrow-button--black"
-            />
-          </button>
-
-          <button onClick={handleBtnNext} className="advantage__btn">
-            <div
-              className="
-                icon 
-                icon__arrow-button 
-                icon__arrow-button--black
-                icon__arrow-button--rigth"
-            />
-          </button>
+          <ControlsButtons
+            color="black"
+            handleBtnNext={handleBtnNext}
+            handleBtnPrev={handleBtnPrev}
+          />
         </div>
       </div>
     </article>

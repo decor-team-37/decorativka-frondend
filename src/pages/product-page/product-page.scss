@@ -1,0 +1,36 @@
+@import '../../style/utils';
+
+.product-page {
+  &__content {
+    margin-block: 24px 40px;
+
+    @include on-tablet {
+      margin-bottom: 110px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__title {
+    color: rgb(32, 32, 32);
+    font-size: 20px;
+    font-family: $manrope-medium;
+    line-height: 120%;
+
+    @include on-desktop {
+      font-size: 24px;
+    }
+  }
+
+  &__media-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__selected-img {
+    width: 100%;
+  }
+}

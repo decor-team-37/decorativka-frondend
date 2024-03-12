@@ -42,7 +42,6 @@
     @extend %label;
   }
 
-  // винести у компонент щоб не дублювати
   &__control {
     display: none;
 
@@ -60,25 +59,6 @@
     }
   }
 
-  // винести у компонент щоб не дублювати
-  &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 36px;
-    height: 36px;
-
-    border: 0.52px solid $divider-color;
-    border-radius: 50%;
-
-    @include hover(background-color, $divider-color);
-
-    @include on-desktop {
-      width: 70px;
-      height: 70px;
-    }
-  }
 
   &__title {
     color: $white-text-color;
