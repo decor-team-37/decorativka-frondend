@@ -91,6 +91,17 @@
       transform: rotate(180deg);
     }
   }
+
+  &__arrow-small {
+    background-image: url(../icons/arrow-small.svg);
+
+    width: 10px;
+    height: 10px;
+
+    &--down {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 
