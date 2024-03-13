@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { SlideData } from '../../../../../types/SlideData';
 import './Advantage.scss';
 
@@ -26,20 +25,30 @@ export const AdvantageItem: React.FC<Props> = ({
         <div className="advantage__separator" />
 
         <div className="advantage__control">
-          <button onClick={handleBtnPrev} className="advantage__btn">
+          <button
+            onClick={handleBtnPrev}
+            className="advantage__btn"
+            type="button"
+            aria-label="back"
+          >
             <div
               className="
-                icon 
+                icon
                 icon__arrow-button
                 icon__arrow-button--black"
             />
           </button>
 
-          <button onClick={handleBtnNext} className="advantage__btn">
+          <button
+            onClick={handleBtnNext}
+            className="advantage__btn"
+            type="button"
+            aria-label="forward"
+          >
             <div
               className="
-                icon 
-                icon__arrow-button 
+                icon
+                icon__arrow-button
                 icon__arrow-button--black
                 icon__arrow-button--rigth"
             />

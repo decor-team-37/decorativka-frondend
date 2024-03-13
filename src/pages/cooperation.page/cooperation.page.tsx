@@ -1,86 +1,55 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FormPage } from '../../components/FormPage';
+import { PageNavigation } from '../../components/PageNavigation';
 import './cooperation.scss';
 
-enum NameLinks {
-  HomePage = 'Головна',
-  Cooperation = 'Співпраця',
-  /*   Cooperation = 'Шпалери',
-    Cooperation = 'Фарби',
-    Cooperation = 'Контакти',
-    Cooperation = 'Про нас',
-    Cooperation = 'Нанесення декоративного покриття',
-    Cooperation = 'Оформити замовлення', */
-}
-
-type Props = {
-  children: React.ReactNode;
-  previousLink?: NameLinks;
-};
-
-const PageNavigation: React.FC<Props> = ({ children, previousLink }) => {
-  return (
-    <div className="page-navigation">
-      <Link to="/" className="page-navigation__link ">
-        <div className="icon icon__arrow-navigation" />
-        Головна
-      </Link>
-
-      {previousLink && (
-        <>
-          <div className="icon icon__elipse" />
-          <Link to="/" className="page-navigation__link ">
-            {previousLink}
-          </Link>
-        </>
-      )}
-      <div className="icon icon__elipse" />
-
-      <p className="page-navigation__actual-link"> {children} </p>
-    </div>
-  );
-};
-
-export const Cooperation = () => {
+export const Cooperation: React.FC = () => {
   return (
     <div className="cooperation">
       <div className="content">
-        <PageNavigation previousLink={NameLinks.Cooperation}>
-          {NameLinks.Cooperation}
-        </PageNavigation>
+        <div className="cooperation__nav">
+          <PageNavigation />
+        </div>
 
-        <div className="cooperation__title">
-          <h2 className="title title--h2">
+        <section className="cooperation__first-section">
+          <h2 className="title title--h2 cooperation__first-section-title">
             {`Приєднуйтеся до нас сьогодні, щоб разом створювати неповторні і вражаючі інтер'єри для наших клієнтів!`}
           </h2>
 
-          <p>
-            Приглашаем талантливых дизайнеров и мастеров присоединиться к нашей
-            команде для совместного развития и успешных проектов! Мы предлагаем
-            широкий выбор декоративной штукатурки, обоев, красок и фотообоев от
-            ведущих производителей. Мы ценим вашу креативность и
-            профессионализм, поэтому предлагаем вам взаимовыгодные условия
-            сотрудничества, включая конкурентное вознаграждение, поддержку и
-            возможности для
+          <p className="cooperation__first-section-p">
+            {`
+            Запрошуємо талановитих дизайнерів і майстрів приєднатися до нашої команди для спільного розвитку та успішних проєктів! Ми пропонуємо широкий вибір декоративної штукатурки, шпалер, фарб та фотошпалер від провідних виробників. Ми цінуємо вашу креативність і професіоналізм, тому пропонуємо вам взаємовигідні умови співпраці, що включають конкурентну винагороду, підтримку та можливості для особистого зростання.
+            `}
           </p>
-        </div>
-
-        <section className="cooperetion__section">
-          <div className="cooperetion__section-info">
-            <h2 className="title title--h2">
-              Для більш детальних умов співпраці зв’яжіться з нами:
-            </h2>
-            <p> Телефон </p>
-            <p> +38(050)542-81-93 </p>
-          </div>
-
-          <div className="cooperetion__section-img">
-            <img src="" alt="" />
-          </div>
         </section>
 
-        <FormPage formVersion="consultation" />
+        <section className="cooperation__second-section">
+          <div className="cooperation__second-section-info">
+            <h2 className="title title--h2 cooperation__text-center">
+              Для більш детальних умов співпраці зв’яжіться з нами:
+            </h2>
+
+            <div
+              className="
+              cooperation__second-section-contacts
+              cooperation__text-center
+            "
+            >
+              <p> Телефон </p>
+              <p> +38(050)542-81-93 </p>
+            </div>
+          </div>
+
+          <img
+            src="/img/cooperation.png"
+            alt="our work"
+            className="cooperation__img"
+          />
+        </section>
+
+        <div className="cooperation__form">
+          <FormPage formVersion="sendMessage" />
+        </div>
       </div>
     </div>
   );
