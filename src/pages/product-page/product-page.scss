@@ -1,0 +1,149 @@
+@import '../../style/utils';
+
+.product-page {
+  &__content {
+    padding: 24px 40px;
+
+    @include on-tablet {
+      padding-bottom: 110px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 130px;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    color: rgb(32, 32, 32);
+    font-size: 20px;
+    font-family: $manrope-medium;
+    line-height: 120%;
+
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 24px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+  }
+
+  &__media-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__selected-img {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  &__list-imgs {
+    display: flex;
+    gap: 40px;
+
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    flex-basis: 1/3;
+
+    &--selected {
+      transform: scale(2);
+      border: 1px solid $accents-color;
+      padding: 1px;
+    }
+  }
+
+  &__item-img {
+    width: 60px;
+    aspect-ratio: 1;
+  }
+
+  &__control {
+    margin: 0 auto;
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__description,
+  &__value,
+  &__subtitle {
+    font-size: 14px;
+    font-family: $manrope-light;
+    line-height: 150%;
+  }
+
+  &__subtitle {
+    color: $secondary-color;
+  }
+
+  &__size-and-code {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__separator {
+    width: 100%;
+    height: 1px;
+    background-color: $main-black;
+  }
+
+  &__quantity-and-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 16px;
+    width: 100px;
+
+    border: 1px solid $divider-color;
+  }
+
+  &__quantity-wrapper-btns {
+    display: flex;
+    flex-direction: column;
+
+    border-left: 1px solid $divider-color;
+  }
+
+  &__quantity-btn {
+    @include hover(background-color, $divider-color);
+    padding: 10px;
+  }
+
+  &__price {
+    color: $accents-color;
+    font-size: 20px;
+    font-family: $manrope-medium;
+    line-height: 120%;
+  }
+
+  &__currency {
+    color: $main-black;
+    font-size: 14px;
+    font-family: $manrope-light;
+    line-height: 150%;
+  }
+}

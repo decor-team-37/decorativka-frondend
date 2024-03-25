@@ -1,14 +1,14 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { App } from './App';
 import { HomePage } from './pages/home.page';
-import { NotFoundPage } from './pages/not.found.page';
-import { Cooperation } from './pages/cooperation.page';
 import { Contacts } from './pages/contacts.page/contacts.page';
 import { AboutUsPage } from './pages/about.us.page';
 import { BasketPage } from './pages/basket.page';
 import { GlobalProvider } from './store/GlobalContext';
 import { FavoritePage } from './pages/favorite.page';
 import { PlaceAnOrder } from './pages/place.an.order/place.an.order';
+import { Cooperation } from './pages/cooperation-page';
+import { NotFoundPage } from './pages/not-found-page';
 
 export const Root = () => (
   <Router>
