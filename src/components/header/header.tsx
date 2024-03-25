@@ -108,7 +108,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
 
             <li className="header__category-item">
               <div className="header__category-title">
-                <Link to="/">
+                <Link to="/about_us">
                   <h4
                     className="
                       header__category-name
@@ -123,7 +123,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
 
             <li className="header__category-item">
               <div className="header__category-title">
-                <Link to="/">
+                <Link to="/contacts">
                   <h4
                     className="
                       header__category-name
@@ -145,7 +145,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
             </li>
 
             <li className="header__main-nav-item">
-              <Link to="/cart">
+              <Link to="/basket">
                 <div className="icon icon--hover icon__cart" />
               </Link>
             </li>

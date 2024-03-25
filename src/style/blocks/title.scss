@@ -6,6 +6,10 @@
     text-transform: uppercase;
   }
 
+  &--h1 {
+    @extend %h1-style;
+  }
+
   &--h2 {
     color: $main-black;
 

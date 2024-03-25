@@ -17,7 +17,7 @@ export const Introduction = () => {
             втілюючи ваші мрії в реальність
           </p>
 
-          <Button type="button" $secondary $primary isValid>
+          <Button type="button" $primary>
             Детальніше
           </Button>
         </div>

@@ -5,7 +5,6 @@ import { Advantages } from './components/Advantages';
 import { Services } from './components/Services';
 import { Products } from './components/Products';
 import { FormHome } from './components/FormHome';
-
 import './home-page.scss';
 
 export const HomePage = () => {

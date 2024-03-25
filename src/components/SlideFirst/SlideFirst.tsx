@@ -34,7 +34,7 @@ export const SlideFirst: React.FC<Props> = ({
 
         <h2 className="slide-first__title">{slide.title}</h2>
 
-        <Button type="button" $secondary $primary isValid>
+        <Button type="button" $primary>
           Детальніше
         </Button>
       </div>
