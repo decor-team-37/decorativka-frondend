@@ -27,7 +27,6 @@ export const AdvantageItem: React.FC<Props> = ({
         <div className="advantage__separator" />
 
         <div className="advantage__control">
-<<<<<<< HEAD
           <button
             onClick={handleBtnPrev}
             className="advantage__btn"
@@ -56,13 +55,11 @@ export const AdvantageItem: React.FC<Props> = ({
                 icon__arrow-button--rigth"
             />
           </button>
-=======
           <ControlsButtons
             color="black"
             handleBtnNext={handleBtnNext}
             handleBtnPrev={handleBtnPrev}
           />
->>>>>>> fe683aa0690e7b11491e3769cdc96f8a60235c5e
         </div>
       </div>
     </article>

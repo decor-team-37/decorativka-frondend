@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FormPage } from '../../components/FormPage';
-<<<<<<< HEAD:src/pages/cooperation.page/cooperation.page.tsx
 import { PageNavigation } from '../../components/PageNavigation';
-import './cooperation.scss';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
 import { Loader } from '../../components/Loader';
+import './cooperation.scss';
 
 export const Cooperation: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,9 +17,6 @@ export const Cooperation: React.FC = () => {
       setIsLoading(false);
     }, initialDelayLoader);
   }, []);
-=======
-import './cooperation-page.scss';
->>>>>>> fe683aa0690e7b11491e3769cdc96f8a60235c5e:src/pages/cooperation-page/cooperation-page.tsx
 
   return (
     <div className="cooperation">
