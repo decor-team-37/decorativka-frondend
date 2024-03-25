@@ -10,12 +10,24 @@
     @include hover(transform, (scale(1.1)));
   }
 
+  &--close-black {
+    background-image: url(../icons/close-black.svg);
+  }
+
   &__favorite {
     background-image: url(../icons/favorite.svg);
   }
 
   &__cart {
     background-image: url(../icons/cart.svg);
+  }
+
+  &--basket {
+    background-image: url(../icons/basket_black.svg);
+  }
+
+  &--favorite-icon {
+    background-image: url(../icons/favorite-icon.svg);
   }
 
   &__arrow-white {
@@ -92,7 +104,3 @@
     }
   }
 }
-
-
-
-

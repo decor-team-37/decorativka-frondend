@@ -3,10 +3,10 @@ import { Introduction } from './components/Introduction';
 import { Gallery } from './components/Gallery';
 import { Advantages } from './components/Advantages';
 
-import './home.page.scss';
 import { Services } from './components/Services';
 import { Products } from './components/Products';
 import { FormPage } from '../../components/FormPage';
+import './home.page.scss';
 
 export const HomePage = () => {
   return (

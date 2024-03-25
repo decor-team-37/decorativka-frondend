@@ -10,6 +10,10 @@ const pageLink: PageLink = {
   cooperation: 'Співпраця',
   home: 'Головна',
   product: 'Продукти',
+  contacts: 'Контакти',
+  about_us: 'Про нас',
+  place_an_order: 'Оформлення замовлення',
+  basket: 'Кошик',
 };
 
 export const PageNavigation: React.FC = () => {

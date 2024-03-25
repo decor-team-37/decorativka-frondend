@@ -16,6 +16,7 @@ import './FormPage.scss';
 
 type FormProps = {
   formVersion: keyof typeof formVersionData;
+  children?: React.ReactNode;
 };
 
 interface CitiesOptions {
@@ -30,7 +31,7 @@ const cityOptions: CitiesOptions[] = [
   { label: 'Рівне', value: 'Рівне' },
 ];
 
-export const FormPage: React.FC<FormProps> = ({ formVersion }) => {
+export const FormPage: React.FC<FormProps> = ({ formVersion, children }) => {
   const [selectedCity, setSelectedCity] = useState<CitiesOptions | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [description, setDescription] = useState({
@@ -56,6 +57,8 @@ export const FormPage: React.FC<FormProps> = ({ formVersion }) => {
   });
 
   const onSubmit: SubmitHandler<MyForm> = data => {
+    console.log(data);
+
     getSendForm(data);
     reset();
     setSelectedCity(null);
@@ -265,7 +268,7 @@ export const FormPage: React.FC<FormProps> = ({ formVersion }) => {
             </div>
 
             {formVersion !== 'order' && (
-              <Button type="submit" $primary isValid={isValid} classForm>
+              <Button type="submit" $primary isValid={isValid}>
                 {formVersion === 'consultation'
                   ? 'Передзвоніть мені'
                   : 'Надіслати'}
@@ -280,9 +283,7 @@ export const FormPage: React.FC<FormProps> = ({ formVersion }) => {
           })}
         >
           {formVersion === 'order' && ( // When the cads be ready we can add rules about length
-            <div className="cards" style={{ height: '200px' }}>
-              <span>Here`ll be cars from backets</span>
-            </div>
+            <div>{children}</div>
           )}
 
           <div className="form__group-radio">
@@ -308,10 +309,10 @@ export const FormPage: React.FC<FormProps> = ({ formVersion }) => {
 
           {formVersion === 'order' && (
             <div className="form__order-group-button">
-              <Button $secondary classForm>
+              <Button $secondary path="/">
                 Продовжити покупки
               </Button>
-              <Button type="submit" $primary isValid={isValid} classForm>
+              <Button type="submit" $primary isValid={isValid}>
                 Підтвердити замовлення
               </Button>
             </div>

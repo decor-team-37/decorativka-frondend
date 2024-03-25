@@ -101,7 +101,7 @@ export const Menu = () => {
 
           <li className="menu__category-item">
             <div className="menu__category-title">
-              <Link to="/">
+              <Link to="/about_us">
                 <h4 className="menu__category-name">Про нас</h4>
               </Link>
             </div>
@@ -109,7 +109,7 @@ export const Menu = () => {
 
           <li className="menu__category-item">
             <div className="menu__category-title">
-              <Link to="/">
+              <Link to="/contacts">
                 <h4 className="menu__category-name">Контакти</h4>
               </Link>
             </div>
