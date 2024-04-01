@@ -37,7 +37,7 @@ export const Menu = () => {
             {isOpenServices && (
               <ul className="menu__subcategorys">
                 <li className="menu__subcategory-item">
-                  <Link to="/">
+                  <Link to="/service_decorative">
                     <p className="menu__subcategory-name">
                       Нанесення декоративного покриття
                     </p>
@@ -45,13 +45,13 @@ export const Menu = () => {
                 </li>
 
                 <li className="menu__subcategory-item">
-                  <Link to="/">
+                  <Link to="/service_hang_wallpaper">
                     <p className="menu__subcategory-name">Поклейка шпалер</p>
                   </Link>
                 </li>
 
                 <li className="menu__subcategory-item">
-                  <Link to="/">
+                  <Link to="/paint_tinting">
                     <p className="menu__subcategory-name">Тонування фарб</p>
                   </Link>
                 </li>
@@ -85,13 +85,13 @@ export const Menu = () => {
             {isOpenProducts && (
               <ul className="menu__subcategorys">
                 <li className="menu__subcategory-item">
-                  <Link to="/">
+                  <Link to="/wallpaper">
                     <p className="menu__subcategory-name">Шпалери</p>
                   </Link>
                 </li>
 
                 <li className="menu__subcategory-item">
-                  <Link to="/">
+                  <Link to="/paint">
                     <p className="menu__subcategory-name">Фарба</p>
                   </Link>
                 </li>

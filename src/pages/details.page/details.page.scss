@@ -1,0 +1,204 @@
+@import '../../style/utils';
+
+.product-page {
+  padding-block: 24px 4px;
+
+  @include on-tablet {
+    padding-bottom: 89px;
+  }
+
+  @include on-desktop {
+    padding-block: 112px 93px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 24px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__media-content {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include on-desktop {
+      gap: 94px;
+    }
+  }
+
+  &__selected-img {
+    width: 336px;
+    height: 328px;
+    aspect-ratio: 1;
+
+    @include on-tablet {
+      width: 456px;
+      height: 445px;
+    }
+
+    @include on-desktop {
+      width: 640px;
+      height: 625px;
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+
+  &__list-imgs {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include on-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    padding: 6px;
+    width: 70px;
+    height: 70px;
+
+    &--selected {
+      margin: 0 20px;
+      transform: scale(1.7);
+      border: 1px solid $accents-color;
+      padding: 1px;
+
+      &>img {
+        width: 100%;
+        height: 100%;
+      }
+
+      @include on-tablet {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  &__item-img {
+    object-fit: cover;
+    width: 58px;
+    height: 58px;
+    aspect-ratio: 1;
+  }
+
+  &__control {
+    margin: 0 auto;
+  }
+
+  &__info {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+
+    @extend %body-text;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 20px
+    }
+
+    @include on-desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__description,
+  &__value {
+    color: $main-black;
+  }
+
+  &__info-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__subtitle {
+
+    color: $secondary-color;
+  }
+
+  &__separator {
+    height: 1px;
+    border: 1px solid $main-black;
+    margin-top: 24px;
+
+
+    @include on-tablet {
+      margin-top: 47px;
+    }
+  }
+
+  &__button-wrap {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+
+    @include on-desktop {
+      align-items: flex-end;
+    }
+  }
+
+  &__button {
+    width: 50px;
+    height: 48px;
+    border: 1px solid $main-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include on-desktop {
+      width: 90px;
+      height: 64px;
+    }
+  }
+}

@@ -25,12 +25,12 @@ export const Footer = () => {
 
               <ul className="footer__list">
                 <li className="footer__item">
-                  <Link to="#" className="footer__link">
+                  <Link to="/service_decorative" className="footer__link">
                     Нанесення декоративного покриття{' '}
                   </Link>
                 </li>
                 <li className="footer__item">
-                  <Link to="#" className="footer__link">
+                  <Link to="/service_hang_wallpaper" className="footer__link">
                     Поклейка шпалер{' '}
                   </Link>
                 </li>
@@ -47,7 +47,7 @@ export const Footer = () => {
 
               <ul className="footer__list">
                 <li className="footer__item">
-                  <Link to="#" className="footer__link">
+                  <Link to="/wallpaper" className="footer__link">
                     Шпалери{' '}
                   </Link>
                 </li>

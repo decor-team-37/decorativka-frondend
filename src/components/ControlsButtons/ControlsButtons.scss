@@ -5,6 +5,18 @@
   justify-content: end;
   gap: 15px;
 
+  &--flex-column {
+    @include on-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &--icon-rotate {
+    @include on-tablet {
+      transform: rotate(90deg);
+    }
+  }
+
   &__btn {
     display: flex;
     align-items: center;

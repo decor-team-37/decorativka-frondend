@@ -4,14 +4,14 @@ import { PageNavigation } from '../../components/PageNavigation';
 import { Loader } from '../../components/Loader';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
 import { GlobalContext } from '../../store/GlobalContext';
-import { getCartItems } from '../../helpers/getProductsByCategories';
+import { getCartBaskets } from '../../helpers/getProductsByCategories';
 import { TableProductsOrder } from './table.products.order';
 import './place.an.order.scss';
 
 export const PlaceAnOrder = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { localStore, handleChooseCart } = useContext(GlobalContext);
-  const cartItemsOrder = getCartItems(localStore);
+  const cartItemsOrder = getCartBaskets(localStore);
   const timerId = useRef(0);
 
   useEffect(() => {

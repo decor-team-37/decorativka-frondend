@@ -6,6 +6,10 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  &--relative {
+    position: relative;
+  }
+
   &--hover {
     @include hover(transform, (scale(1.1)));
   }
@@ -14,8 +18,23 @@
     background-image: url(../icons/close-black.svg);
   }
 
-  &__favorite {
+  &--favorite {
     background-image: url(../icons/favorite.svg);
+  }
+
+
+  &--count {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+
+    @extend %micro;
+    text-align: center;
+    line-height: 19px;
+    background-color: $accents-color;
+    color: $white-text-color;
+    right: 0;
   }
 
   &__cart {
@@ -28,6 +47,10 @@
 
   &--favorite-icon {
     background-image: url(../icons/favorite-icon.svg);
+  }
+
+  &--favorite-icon-blue {
+    background-image: url(../icons/favorite-icon-blue.svg);
   }
 
   &__arrow-white {
@@ -101,6 +124,12 @@
 
     &--rigth {
       transform: rotate(180deg);
+    }
+
+    &--down {
+      @include on-tablet {
+        transform: rotate(-90deg);
+      }
     }
   }
 

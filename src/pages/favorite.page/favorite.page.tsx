@@ -3,13 +3,13 @@ import { GlobalContext } from '../../store/GlobalContext';
 import { getCartFavorites } from '../../helpers/getProductsByCategories';
 import { Button } from '../../components/Button';
 import { Loader } from '../../components/Loader';
-import './favorite.page.scss';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
+import { ProductCard } from '../../components/ProductCard';
+import './favorite.page.scss';
 
 export const FavoritePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { localStore } = useContext(GlobalContext);
-  const cartFavorites = getCartFavorites(localStore);
   const timerId = useRef(0);
 
   useEffect(() => {
@@ -20,6 +20,8 @@ export const FavoritePage = () => {
       setIsLoading(false);
     }, initialDelayLoader);
   }, []);
+
+  const cartFavorites = getCartFavorites(localStore);
 
   return (
     <div className="favorite">
@@ -39,11 +41,10 @@ export const FavoritePage = () => {
         {isLoading && <Loader />}
 
         {!isLoading && !!cartFavorites.length && (
-          <section className="basket__products">
-            {cartFavorites.map(product => (
-              <>{product.name}</>
+          <section className="favorite__products">
+            {cartFavorites.map(item => (
+              <ProductCard product={item} key={item.id} />
             ))}
-            <div className="basket__line basket__line" />
           </section>
         )}
 
@@ -57,9 +58,11 @@ export const FavoritePage = () => {
           </section>
         )}
 
-        <Button $secondary path="..">
-          Продовжити покупки
-        </Button>
+        <div className="favorite__button">
+          <Button $secondary path="..">
+            Продовжити покупки
+          </Button>
+        </div>
       </div>
     </div>
   );

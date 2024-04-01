@@ -1,33 +1,20 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/Button';
 import { GlobalContext } from '../../store/GlobalContext';
-import { getCartItems } from '../../helpers/getProductsByCategories';
+import { getCartBaskets } from '../../helpers/getProductsByCategories';
 import { Loader } from '../../components/Loader';
 import { TableProductsBasket } from './table.product.baskets';
 import './basket.page.scss';
-import { getProducts, getProductsById } from '../../services/AppServices';
-
-/* const promise = fetch('http://localhost:8081/api/v1/categories');
-
-promise.then(res => {
-  res.json().then(a => a);
-}); */
 
 export const BasketPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { localStore, handleChooseCart } = useContext(GlobalContext);
-  const cartItemsOrder = getCartItems(localStore);
+  const cartItemsOrder = getCartBaskets(localStore);
   const timerId = useRef(0);
 
   useEffect(() => {
     setIsLoading(true);
     window.clearTimeout(timerId.current);
-
-    // const promise = getProductsById(2);
-    const promise1 = getProducts();
-
-    // promise.then(res => console.log(res));
-    promise1.then(res => console.log(res));
 
     timerId.current = window.setTimeout(() => {
       setIsLoading(false);
@@ -45,7 +32,7 @@ export const BasketPage: React.FC = () => {
         {isLoading && <Loader />}
 
         {!isLoading && !!cartItemsOrder.length && (
-          <section>
+          <section className="basket__table-products">
             <TableProductsBasket
               cartItemsOrder={cartItemsOrder}
               handleChooseCart={handleChooseCart}

@@ -1,19 +1,15 @@
 import { MyForm } from '../types/MyForm';
+import { WallpaperProducts } from '../types/Products/WallpaperProducts';
 import { client } from '../utils/fetchClient';
-
-const params = {
-  page: 0,
-  size: 1,
-};
 
 export function getSendForm(forms: MyForm) {
   return client.post<Comment>('/posts', forms);
 }
 
-export function getProducts<T>() {
-  return client.goods<T[]>('/v1/products', params);
+export function getOffers<T>() {
+  return client.offers<T[]>('/v1/offers');
 }
 
-export function getProductsById<T>(id: number) {
-  return client.goodsById<T[]>(`/v1/products/${id}`);
+export function getWallpaper() {
+  return client.get<WallpaperProducts[]>('/v1/products/all/1');
 }

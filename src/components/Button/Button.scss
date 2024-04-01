@@ -2,7 +2,8 @@
 
 .Button {
   height: 48px;
-  width: 210px;
+  // width: 210px;
+  width: 100%;
   padding: 8px 32px;
   display: flex;
   justify-content: center;
@@ -18,7 +19,7 @@
   }
 
   @include on-desktop {
-    width: 310px;
+    // width: 310px;
   }
 
   &__arrow {

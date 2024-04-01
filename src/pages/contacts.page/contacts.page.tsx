@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { PageNavigation } from '../../components/PageNavigation';
 import { FormPage } from '../../components/FormPage';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
-import './contacts.page.scss';
 import { Loader } from '../../components/Loader';
+import './contacts.page.scss';
 
 export const Contacts: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,22 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { pageLink } from '../../constants/pageLinks';
 import './PageNavigation.scss';
 
-type PageLink = {
-  [key: string]: string;
+type Props = {
+  prodName?: string;
 };
 
-const pageLink: PageLink = {
-  cooperation: 'Співпраця',
-  home: 'Головна',
-  product: 'Продукти',
-  contacts: 'Контакти',
-  about_us: 'Про нас',
-  place_an_order: 'Оформлення замовлення',
-  basket: 'Кошик',
-};
-
-export const PageNavigation: React.FC = () => {
+export const PageNavigation: React.FC<Props> = ({ prodName }) => {
   const { pathname } = useLocation();
   const data = pathname.split('/').slice(1);
 
@@ -38,7 +29,9 @@ export const PageNavigation: React.FC = () => {
 
       <div className="icon icon__elipse" />
       <p className="page-navigation__text">
-        {pageLink[data[data.length - 1]] || data[data.length - 1]}
+        {!prodName
+          ? pageLink[data[data.length - 1]] || data[data.length - 1]
+          : prodName}
       </p>
     </div>
   );

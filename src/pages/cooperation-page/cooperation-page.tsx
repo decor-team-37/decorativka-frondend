@@ -3,7 +3,7 @@ import { FormPage } from '../../components/FormPage';
 import { PageNavigation } from '../../components/PageNavigation';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
 import { Loader } from '../../components/Loader';
-import './cooperation.scss';
+import './cooperation-page.scss';
 
 export const Cooperation: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);

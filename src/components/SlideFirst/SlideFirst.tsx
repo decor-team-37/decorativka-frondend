@@ -5,6 +5,8 @@ import './SlideFirst.scss';
 import { SlideData } from '../../types/SlideData';
 import { Button } from '../Button';
 import { ControlsButtons } from '../ControlsButtons';
+import { pageLink } from '../../constants/pageLinks';
+import { getPathLink } from '../../helpers/getPathLink';
 
 type Props = {
   slide: SlideData;
@@ -17,6 +19,8 @@ export const SlideFirst: React.FC<Props> = ({
   handleBtnNext,
   handleBtnPrev,
 }) => {
+  const path = getPathLink(pageLink, slide.title);
+
   return (
     <article className="slide-first">
       <img className="slide-first__img" src={slide.img} alt={slide.title} />
@@ -34,7 +38,7 @@ export const SlideFirst: React.FC<Props> = ({
 
         <h2 className="slide-first__title">{slide.title}</h2>
 
-        <Button type="button" $primary>
+        <Button type="button" $primary path={`/${path}`}>
           Детальніше
         </Button>
       </div>

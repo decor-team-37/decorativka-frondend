@@ -1,17 +1,8 @@
 @import '../../../style//utils';
 
-.TableProductsBasket {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-table tr,td,th {
-  border: 1px solid black;
-}
-
 .table-basket {
   width: 100%;
+  border-collapse: collapse;
 
   & th {
     @extend %h4-style;
@@ -19,36 +10,96 @@ table tr,td,th {
     text-transform: uppercase;
   }
 
-  &__thead tr {
-    text-align: left;
+  &__thead {
+    &::after {
+      height: 16px;
+      display: table-row;
+      content: '';
+    }
   }
 
-  &__thead {
-    border-bottom: 1px solid $divider-color;
+  &__thead tr {
+    text-align: left;
+    display: none;
+
+    @include on-tablet {
+      display: table-row;
+    }
+  }
+
+  &__tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 67px;
+
+    &:last-child {
+      border-bottom: 1px solid $divider-color;
+      padding-bottom: 16px;
+    }
+
+    @include on-tablet {
+      display: table-row-group;
+    }
+  }
+
+  &__tbody tr {
+    border-top: 1px solid $divider-color;
+    padding-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 32px;
+    grid-template-areas:
+      "img img close"
+      "price control items-price";
+
+    @include on-tablet {
+      display: table-row;
+      padding-top: 0;
+    }
+  }
+
+  &__tbody td {
+    @include on-tablet {
+      border-top: 1px solid $divider-color;
+      padding-block: 24px;
+    }
+  }
+
+  &__img {
+    grid-area: img;
+  }
+
+  &__remove {
+    grid-area: close;
+  }
+
+  &__price {
+    align-self: center;
+    justify-self: right;
+    grid-area: price;
+  }
+
+  &__control {
+    align-self: center;
+    justify-self: center;
+    grid-area: control;
+  }
+
+  &__items-price {
+    align-self: center;
+    justify-self: left;
+    grid-area: items-price;
   }
 
   &__td {
     &--right {
       text-align: right;
-    }
-  }
-
-  &__tr {
-    // border-block: 1px solid $divider-color;
-
-    /* &--flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    } */
-
-    /* &:first-child {
-      border-top: 1px solid $divider-color;
+      margin: auto 0;
 
       @include on-tablet {
-        border-top: 0;
+        text-align: right;
       }
-    } */
+    }
   }
 }
 

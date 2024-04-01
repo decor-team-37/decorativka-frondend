@@ -1,14 +1,14 @@
 @import '../../style/utils';
 
 .favorite {
-  padding-block: 24px 20px;
+  padding-block: 24px 47px;
 
   @include on-tablet {
-    padding-block: 32px 81px;
+    padding-block: 32px 66px;
   }
 
   @include on-desktop {
-    padding-block: 93px 110px;
+    padding-block: 93px 101px;
   }
 
   &__nav {
@@ -45,6 +45,19 @@
 
     @include on-desktop {
       margin-bottom: 48px;
+    }
+  }
+
+  &__products {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    justify-items: center;
+    row-gap: 64px;
+    column-gap: 10px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
     }
   }
 }

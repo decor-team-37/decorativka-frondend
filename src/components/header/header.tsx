@@ -1,9 +1,13 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 // or you can add aria-label on 153
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useContext, useState } from 'react';
+import cn from 'classnames';
 import { Link } from 'react-router-dom';
-
+import { GlobalContext } from '../../store/GlobalContext';
+import {
+  getCartFavorites,
+  getCartBaskets,
+} from '../../helpers/getProductsByCategories';
 import './Header.scss';
 
 type Props = {
@@ -14,6 +18,9 @@ type Props = {
 export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
   const [isOpenServices, setIsOpenServices] = useState(false);
   const [isOpenProducts, setIsOpenProducts] = useState(false);
+  const { localStore } = useContext(GlobalContext);
+  const cartFavorits = getCartFavorites(localStore);
+  const cartBaskets = getCartBaskets(localStore);
 
   return (
     <header className="header">
@@ -35,7 +42,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
 
                   <div className="header__icon-arrow">
                     <div
-                      className={classNames('icon', 'icon__arrow-white', {
+                      className={cn('icon', 'icon__arrow-white', {
                         'icon__arrow-white--up': isOpenServices,
                       })}
                     />
@@ -46,7 +53,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
               {isOpenServices && (
                 <ul className="header__subcategorys">
                   <li className="header__subcategory-item">
-                    <Link to="/">
+                    <Link to="/service_decorative">
                       <p className="header__subcategory-name">
                         Нанесення декоративного покриття
                       </p>
@@ -54,7 +61,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
                   </li>
 
                   <li className="header__subcategory-item">
-                    <Link to="/">
+                    <Link to="/service_hang_wallpaper">
                       <p className="header__subcategory-name">
                         Поклейка шпалер
                       </p>
@@ -62,7 +69,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
                   </li>
 
                   <li className="header__subcategory-item">
-                    <Link to="/">
+                    <Link to="/paint_tinting">
                       <p className="header__subcategory-name">Тонування фарб</p>
                     </Link>
                   </li>
@@ -81,7 +88,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
 
                   <div className="header__icon-arrow">
                     <div
-                      className={classNames('icon', 'icon__arrow-white', {
+                      className={cn('icon', 'icon__arrow-white', {
                         'icon__arrow-white--up': isOpenProducts,
                       })}
                     />
@@ -92,13 +99,13 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
               {isOpenProducts && (
                 <ul className="header__subcategorys">
                   <li className="header__subcategory-item">
-                    <Link to="/">
+                    <Link to="/wallpaper">
                       <p className="header__subcategory-name">Шпалери</p>
                     </Link>
                   </li>
 
                   <li className="header__subcategory-item">
-                    <Link to="/">
+                    <Link to="/paint">
                       <p className="header__subcategory-name">Фарба</p>
                     </Link>
                   </li>
@@ -140,13 +147,29 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
           <ul className="header__main-nav">
             <li className="header__main-nav-item">
               <Link to="/favorite">
-                <div className="icon icon--hover icon__favorite" />
+                <div
+                  className={cn('icon icon--favorite icon--hover', {
+                    'icon--relative': cartFavorits.length,
+                  })}
+                >
+                  {!!cartFavorits.length && (
+                    <div className="icon--count"> {cartFavorits.length} </div>
+                  )}
+                </div>
               </Link>
             </li>
 
             <li className="header__main-nav-item">
               <Link to="/basket">
-                <div className="icon icon--hover icon__cart" />
+                <div
+                  className={cn('icon icon__cart icon--hover', {
+                    'icon--relative': cartBaskets.length,
+                  })}
+                >
+                  {!!cartBaskets.length && (
+                    <div className="icon--count">{cartBaskets.length}</div>
+                  )}
+                </div>
               </Link>
             </li>
 
@@ -157,7 +180,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
                 onClick={() => toggleMenu(!isMenu)}
               >
                 <div
-                  className={classNames('icon', 'icon--hover', 'icon__menu', {
+                  className={cn('icon', 'icon--hover', 'icon__menu', {
                     'icon__menu--close': isMenu,
                   })}
                 />

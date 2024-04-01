@@ -1,25 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-// import { getProducts } from '../services/AppServices';
-import { Product } from '../types/Products';
+import services from '../../public/data/services.json';
+import { ServiceProducts } from '../types/ServiceProducts/ServiceProducts';
+import { ContextType } from '../types/ContextType/ContextType';
 
-export type GlobalContextType = {
-  products: Product[];
-  setHasError: React.Dispatch<React.SetStateAction<string>>;
-  hasError: string;
-  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-  localStore: Product[];
-  setLocalStore: (v: Product[]) => void;
-  handleChooseCart: (card: Product, action: string) => void;
-};
-
-export const GlobalContext = React.createContext<GlobalContextType>({
-  products: [],
-  hasError: '',
-  setProducts: () => {},
+export const GlobalContext = React.createContext<ContextType>({
+  productsService: [],
   localStore: [],
   setLocalStore: () => {},
-  setHasError: () => {},
   handleChooseCart: () => {},
 });
 
@@ -28,53 +16,35 @@ type Props = {
 };
 
 export const GlobalProvider: React.FC<Props> = ({ children }) => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [localStore, setLocalStore] = useLocalStorage<Product[]>(
+  const [localStore, setLocalStore] = useLocalStorage<ServiceProducts[]>(
     'products',
     [],
   );
-  const [hasError, setHasError] = useState('');
+  const [productsService, setProductsService] = useState<ServiceProducts[]>([]);
 
-  /* useEffect(() => {
-    const fetchData = async () => {
-      setHasError('');
+  useEffect(() => {
+    const updatedProducts = services.map(item => {
+      const elem = localStore.find(e => item.id === e.id);
 
-      try {
-        const loadedProducts = await getProducts<Product>();
-
-        const updatedProducts = loadedProducts.map(item => {
-          const elem = localStore.find(e => item.id === e.id);
-
-          if (elem) {
-            return elem;
-          }
-
-          return {
-            ...item,
-            inFavourite: true, // change to false
-            inCart: true, // change to false
-            quantity: 1,
-            price: 1000, // delete !!
-          };
-        });
-
-        setProducts(updatedProducts);
-      } catch (error) {
-        setHasError('Something went wrong');
+      if (elem) {
+        return elem;
       }
-    };
 
-    fetchData();
-  }, []); */
+      return {
+        ...item,
+        inFavourite: false,
+        inCart: false,
+        quantity: 1,
+      };
+    });
 
-  /*  useEffect(() => {
-    setLocalStore(products);
-  }, [products]); // remove !!! */
+    setProductsService(updatedProducts);
+  }, []);
 
-  const handleChooseCart = (card: Product, action: string) => {
-    const currentProducts = [...products];
+  const handleChooseCart = (card: ServiceProducts, action: string) => {
+    const currentProducts = [...productsService];
     let currentStore = [...localStore];
-    let updatedCard: Product = { ...card };
+    let updatedCard: ServiceProducts = { ...card };
 
     if (action === 'addCard') {
       updatedCard = { ...card, inCart: !card.inCart };
@@ -114,17 +84,14 @@ export const GlobalProvider: React.FC<Props> = ({ children }) => {
 
     currentProducts.splice(index, 1, updatedCard);
 
-    setProducts(currentProducts);
+    setProductsService(currentProducts);
     setLocalStore(currentStore);
   };
 
   const value = {
-    hasError,
-    products,
-    setProducts,
+    productsService,
     localStore,
     setLocalStore,
-    setHasError,
     handleChooseCart,
   };
 

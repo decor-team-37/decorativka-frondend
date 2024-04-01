@@ -36,6 +36,7 @@
   }
 
   &__subcategorys {
+    z-index: 99;
     position: absolute;
     top: 50px;
     background-color: $background-color;

@@ -18,7 +18,7 @@ export const TableProductsBasket: React.FC<Props> = ({
   );
 
   return (
-    <div className="TableProductsBasket">
+    <>
       <table className="table-basket">
         <thead className="table-basket__thead">
           <tr className="table-basket__tr">
@@ -30,12 +30,10 @@ export const TableProductsBasket: React.FC<Props> = ({
           </tr>
         </thead>
 
-        <div className="table-basket__line" />
-
-        <tbody>
+        <tbody className="table-basket__tbody">
           {cartItemsOrder.map(product => (
             <tr key={product.id} className="table-basket__tr">
-              <td>
+              <td className="table-basket__img">
                 <div className="mainInfo">
                   <img
                     src={product.img || '../../../img/products/01.png'}
@@ -54,11 +52,11 @@ export const TableProductsBasket: React.FC<Props> = ({
                 </div>
               </td>
 
-              <td aria-label="price">
+              <td aria-label="price" className="table-basket__price">
                 <span>{product.price} грн.</span>
               </td>
 
-              <td aria-label="control items">
+              <td aria-label="control items" className="table-basket__control">
                 <CustomInputNumber
                   changeQuantity={action => {
                     handleChooseCart(product, action);
@@ -67,13 +65,20 @@ export const TableProductsBasket: React.FC<Props> = ({
                 />
               </td>
 
-              <td aria-label="price">
+              <td
+                aria-label="items price"
+                className="table-basket__items-price"
+              >
                 <span>{product.price * product.quantity} грн.</span>
               </td>
 
               <td
                 aria-label="you can control quantity"
-                className="table-basket__td table-basket__td--right"
+                className="
+                table-basket__td
+                table-basket__td--right
+                table-basket__remove
+                "
               >
                 <button
                   aria-label="delete items from basket"
@@ -93,6 +98,6 @@ export const TableProductsBasket: React.FC<Props> = ({
         <span className="totalAmount__price">{totalPrice}</span>
         <span className="totalAmount__currency">грн.</span>
       </div>
-    </div>
+    </>
   );
 };
