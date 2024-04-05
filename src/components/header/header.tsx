@@ -22,6 +22,14 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
   const cartFavorits = getCartFavorites(localStore);
   const cartBaskets = getCartBaskets(localStore);
 
+  const handleCategoryBlur = (
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  ) => {
+    return () => {
+      setTimeout(() => setIsOpen(false), 100);
+    };
+  };
+
   return (
     <header className="header">
       <div className="header__content content">
@@ -36,6 +44,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
                 type="button"
                 className="header__category-btn"
                 onClick={() => setIsOpenServices(!isOpenServices)}
+                onBlur={handleCategoryBlur(setIsOpenServices)}
               >
                 <div className="header__category-title">
                   <h4 className="header__category-name">Послуги</h4>
@@ -82,6 +91,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
                 type="button"
                 className="header__category-btn"
                 onClick={() => setIsOpenProducts(!isOpenProducts)}
+                onBlur={handleCategoryBlur(setIsOpenProducts)}
               >
                 <div className="header__category-title">
                   <h4 className="header__category-name">Продукція</h4>

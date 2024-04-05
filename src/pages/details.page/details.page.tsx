@@ -11,6 +11,9 @@ import { ServiceProducts } from '../../types/ServiceProducts/ServiceProducts';
 import { GlobalContext } from '../../store/GlobalContext';
 import './details.page.scss';
 
+import products from '../../../public/data/products.json';
+import { TyProduct } from '../../types/Products/WallpaperProducts';
+
 export const DetailsPage = () => {
   const { productId } = useParams();
   const { productsService, handleChooseCart } = useContext(GlobalContext);
