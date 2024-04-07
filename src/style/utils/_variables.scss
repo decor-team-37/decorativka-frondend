@@ -15,3 +15,13 @@ $system-success-color: #00d36e;
 $system-error-warning: #fc0;
 $tablet-min-width: 834px;
 $tablet-min-desktop: 1219px;
+$desktop-min-width: $tablet-min-desktop;
+
+$effect-duration-normal: 0.3s;
+$effect-duration-slow: 0.7s;
+$effect-duration-verrySlow: 2s;
+
+$effect-scale-small: 1.03;
+$effect-scale-medium: 1.2;
+$effect-scale-large: 1.5;
+$effect-scale-extraLarge: 1.7;

@@ -36,6 +36,10 @@
     "imageUrl": [
       "public/img/products/02.png",
       "public/img/products/01.png",
+      "public/img/products/02.png",
+      "public/img/products/01.png",
+      "public/img/products/02.png",
+      "public/img/products/01.png",
       "public/img/products/02.png"
     ]
   },
@@ -53,6 +57,7 @@
     "description": "SomeDescription",
     "imageUrl": [
       "public/img/products/01.png",
+      "public/img/products/02.png",
       "public/img/products/02.png",
       "public/img/products/01.png",
       "public/img/products/01.png",

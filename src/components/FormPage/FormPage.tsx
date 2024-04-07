@@ -6,13 +6,15 @@ import cn from 'classnames';
 import { FormFields } from '../FormFields/FormFields';
 import { MyForm } from '../../types/MyForm';
 import { Button } from '../Button';
-import { getSendForm } from '../../services/AppServices';
+import { getSendForm } from '../../api/service.api';
 import { validation } from '../../constants/formValidation';
 import { Modal } from '../Modal';
 import { delivery, payOption } from '../../constants/radioOptions';
 import { RadioButtonGroup } from '../RadioButtonGroup/RadioButtonGroup';
 import { formVersionData } from '../../constants/formVersionData';
 import './FormPage.scss';
+
+/* eslint no-console: "warn" */
 
 type FormProps = {
   formVersion: keyof typeof formVersionData;

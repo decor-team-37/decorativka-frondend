@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import services from '../../public/data/services.json';
+import * as serviceApi from '../api/service.api';
 import { ServiceProducts } from '../types/ServiceProducts/ServiceProducts';
 import { ContextType } from '../types/ContextType/ContextType';
 
@@ -23,7 +23,7 @@ export const GlobalProvider: React.FC<Props> = ({ children }) => {
   const [productsService, setProductsService] = useState<ServiceProducts[]>([]);
 
   useEffect(() => {
-    const updatedProducts = services.map(item => {
+    const updatedProducts = serviceApi.getServices().map(item => {
       const elem = localStore.find(e => item.id === e.id);
 
       if (elem) {
