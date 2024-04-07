@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../../../types/Products';
+import { ServiceProducts as Product } from '../../../types/ServiceProducts/ServiceProducts';
 import { CustomInputNumber } from '../../../components/CustomInputNumber';
 import './table.products.order.scss';
 
@@ -33,7 +33,7 @@ export const TableProductsOrder: React.FC<Props> = ({
               <th aria-label="product img and main info">
                 <div className="mainInfo">
                   <img
-                    src={product.img || '../../../img/products/01.png'}
+                    src={product.img[0] || '../../../img/products/01.png'}
                     alt={product.name}
                     className="mainInfo__img"
                   />

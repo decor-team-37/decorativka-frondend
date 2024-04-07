@@ -40,93 +40,63 @@
   &__media-content {
     display: flex;
     flex-direction: column;
-    gap: 44px;
-    justify-content: center;
+    gap: 20px;
     align-items: center;
 
     @include on-tablet {
+      gap: 24px;
       flex-direction: row;
-      justify-content: space-between;
-    }
-
-    @include on-desktop {
-      gap: 94px;
+      height: 445px;
     }
   }
 
   &__selected-img {
-    width: 336px;
-    height: 328px;
+    width: 100%;
+    height: auto;
     aspect-ratio: 1;
 
     @include on-tablet {
-      width: 456px;
-      height: 445px;
-    }
-
-    @include on-desktop {
-      width: 640px;
-      height: 625px;
+      width: auto;
+      height: 100%;
     }
   }
 
   &__carousel {
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    overflow: hidden;
+    width: 100%;
+    gap: 24px;
 
     @include on-tablet {
       flex-direction: row;
-      gap: 48px;
+      height: 100%;
     }
   }
 
-  &__list-imgs {
-    display: flex;
-    gap: 10px;
-    margin: 0 auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  &__slider {
+    width: 100%;
 
     @include on-tablet {
-      flex-direction: column;
+      width: 150px;
     }
-  }
 
-  &__list {
-    display: flex;
-  }
-
-  &__item {
-    display: flex;
-    padding: 6px;
-    width: 70px;
-    height: 70px;
-
-    &--selected {
-      margin: 0 20px;
-      transform: scale(1.7);
-      border: 1px solid $accents-color;
-      padding: 1px;
-
-      &>img {
-        width: 100%;
-        height: 100%;
-      }
+    &-item {
+      object-fit: cover;
+      margin-inline: auto;
+      margin-block: 20px;
+      height: 58px;
+      width: 58px;
+      transition: transform $effect-duration-normal ease;
 
       @include on-tablet {
-        margin: 20px 0;
+        margin-block: 15px;
       }
     }
-  }
 
-  &__item-img {
-    object-fit: cover;
-    width: 58px;
-    height: 58px;
-    aspect-ratio: 1;
+    .slick-slide.slick-active.slick-center.slick-current &-item {
+      transform: scale($effect-scale-extraLarge);
+    }
   }
 
   &__control {
