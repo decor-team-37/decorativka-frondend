@@ -29,6 +29,7 @@ export const Root = () => (
             <Route index element={<DecorativeService />} />
             <Route path=":productId?" element={<DetailsPage />} />
           </Route>
+
           <Route path="service_hang_wallpaper">
             <Route index element={<HangWallpaper />} />
             <Route path=":productId?" element={<DetailsPage />} />
