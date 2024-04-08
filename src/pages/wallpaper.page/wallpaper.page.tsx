@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
 import { Loader } from '../../components/Loader';
-import { getWallpaper } from '../../services/AppServices';
+import { getWallpaper } from '../../api/product.api';
 import { WallpaperProducts } from '../../types/Products/WallpaperProducts';
 import { PageNavigation } from '../../components/PageNavigation';
 import './wallpaper.page.scss';
+
+/* eslint no-console: "warn" */
 
 export const WallpaperPage = () => {
   const [isLoading, setIsLoading] = useState(false);

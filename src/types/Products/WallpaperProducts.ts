@@ -12,3 +12,7 @@ export type WallpaperProducts = {
   description: string;
   imageUrl: [];
 };
+
+export type TyProduct = {
+  Wallpaper: WallpaperProducts;
+};

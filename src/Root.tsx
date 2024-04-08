@@ -27,12 +27,12 @@ export const Root = () => (
           <Route path="about_us" element={<AboutUsPage />} />
           <Route path="service_decorative">
             <Route index element={<DecorativeService />} />
-            <Route path=":productId?" element={<DetailsPage />} />
+            <Route path=":id?" element={<DetailsPage />} />
           </Route>
 
           <Route path="service_hang_wallpaper">
             <Route index element={<HangWallpaper />} />
-            <Route path=":productId?" element={<DetailsPage />} />
+            <Route path=":id?" element={<DetailsPage />} />
           </Route>
 
           <Route path="paint_tinting" element={<PaintTinting />} />

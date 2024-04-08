@@ -1,7 +1,11 @@
-// import { useParams } from 'react-router-dom';
-import cn from 'classnames';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import cn from 'classnames';
+import Slider, { Settings as SliderSettings } from 'react-slick';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import { initialDelayLoader } from '../../constants/initialDelayLoader';
 import { PageNavigation } from '../../components/PageNavigation';
 import { Loader } from '../../components/Loader';
@@ -11,18 +15,62 @@ import { ServiceProducts } from '../../types/ServiceProducts/ServiceProducts';
 import { GlobalContext } from '../../store/GlobalContext';
 import './details.page.scss';
 
+import varsStyle from '../../helpers/varsFromStyle';
+import { getServiceById } from '../../api/service.api';
+
+/* eslint max-len: "warn" */
+/* eslint no-console: "warn" */
+
 export const DetailsPage = () => {
-  const { productId } = useParams();
+  const { id } = useParams();
+  const serviceId = +(id || 0);
   const { productsService, handleChooseCart } = useContext(GlobalContext);
-  const [selectProduct, setSelectProduct] = useState<ServiceProducts | null>(
-    null,
-  );
-  const generalProduct = productId
-    ? productsService.find(el => el.id === +productId)
+  const [selectService, setSelectService] = useState<ServiceProducts | null>(null);
+
+  const generalProduct = serviceId
+    ? productsService.find(el => el.id === +serviceId)
     : null;
   const [isLoading, setIsLoading] = useState(false);
-  const [indexStart, setIndexImage] = useState(0);
+  const [imgIndex, setImgIndex] = useState(0);
   const timerId = useRef(0);
+  const sliderRef = useRef<Slider>(null);
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const settings: SliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    centerMode: true,
+    vertical: true,
+    arrows: false,
+    afterChange: (currentSlide: number) => {
+      setImgIndex(currentSlide);
+    },
+    centerPadding: '80px',
+    responsive: [
+      {
+        breakpoint: Number(varsStyle.tabletMinWidth),
+        settings: {
+          slidesToShow: 3,
+          vertical: false,
+          centerPadding: '50px',
+        },
+      },
+    ],
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,77 +80,52 @@ export const DetailsPage = () => {
       setIsLoading(false);
     }, initialDelayLoader);
 
-    const product = productsService.find(
-      el => productId && el.id === +productId,
-    ); // remove after API;
-
-    setSelectProduct(product || null); // remove after API;
+    setSelectService(getServiceById(serviceId) || null); // remove after API;
   }, []);
-
-  const handleBtnNext = () => {
-    if (selectProduct) {
-      if (indexStart !== selectProduct.img.length - 1) {
-        setIndexImage(indexStart + 1);
-      } else {
-        setIndexImage(0);
-      }
-    }
-  };
-
-  const handleBtnPrev = () => {
-    if (selectProduct) {
-      if (indexStart !== 0) {
-        setIndexImage(indexStart - 1);
-      } else {
-        setIndexImage(selectProduct.img.length - 1);
-      }
-    }
-  };
 
   return (
     <div className="product-page">
       <div className="content">
         <div className="product-page__nav">
-          <PageNavigation prodName={selectProduct?.name} />
+          <PageNavigation prodName={selectService?.name} />
         </div>
 
         {isLoading && <Loader />}
 
         {!isLoading && (
           <section className="product-page__section">
+            <h3 className="title--h3 title--h3-mobile">
+              {selectService?.name}
+            </h3>
+
             <div className="product-page__media-content">
-              <div>
-                <img
-                  src={selectProduct?.img[indexStart]}
-                  alt={`${selectProduct?.name} img ${indexStart + 1}`}
-                  className="product-page__selected-img"
-                />
-              </div>
+              <img
+                src={selectService?.img[imgIndex]}
+                alt={`${selectService?.name}-img-${imgIndex + 1}`}
+                className="product-page__selected-img"
+              />
 
               <div className="product-page__carousel">
-                <ul className="product-page__list-imgs">
-                  {selectProduct?.img.map((picture, index) => (
-                    <li
-                      key={picture}
-                      className={cn('product-page__item', {
-                        'product-page__item--selected': indexStart === index,
-                      })}
-                    >
-                      <img
-                        src={picture}
-                        alt={`${selectProduct.name} img`}
-                        className="product-page__item-img"
-                      />
-                    </li>
-                  ))}
-                </ul>
+                <div className="product-page__slider">
+                  <Slider ref={sliderRef} {...settings}>
+                    {selectService?.img.map((imgUrl, i) => (
+                      <div key={imgUrl}>
+                        <img
+                          src={imgUrl}
+                          alt={`img-${i}`}
+                          className="product-page__slider-item"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
 
                 <div className="product-page__control">
                   <ControlsButtons
                     $detailPage
                     color="black"
-                    handleBtnNext={handleBtnNext}
-                    handleBtnPrev={handleBtnPrev}
+                    handleBtnNext={handleNext}
+                    handleBtnPrev={handlePrev}
                   />
                 </div>
               </div>
@@ -111,21 +134,21 @@ export const DetailsPage = () => {
             <div className="product-page__info">
               <div className="product-page__info-wrap">
                 <p className="product-page__description">
-                  {selectProduct?.description}
+                  {selectService?.description}
                 </p>
 
                 <div className="product-page__care">
                   <h4 className="product-page__subtitle">Склад</h4>
                   <p className="product-page__value">
-                    {selectProduct?.category}
+                    {selectService?.category}
                   </p>
                 </div>
 
                 <div className="product-page__size-and-code">
                   <div className="product-page__size">
-                    <h4 className="product-page__subtitle">Витрати</h4>
+                    <h4 className="product-page__subtitle">Витрата</h4>
                     <p className="product-page__value">
-                      {selectProduct?.price}
+                      {selectService?.price}
                     </p>
                   </div>
                 </div>

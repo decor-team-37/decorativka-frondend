@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../../../types/Products';
+import { ServiceProducts as Product } from '../../../types/ServiceProducts/ServiceProducts';
 import { CustomInputNumber } from '../../../components/CustomInputNumber';
 import './table.product.baskets.scss';
 
@@ -36,7 +36,7 @@ export const TableProductsBasket: React.FC<Props> = ({
               <td className="table-basket__img">
                 <div className="mainInfo">
                   <img
-                    src={product.img || '../../../img/products/01.png'}
+                    src={product.img[0] || '../../../img/products/01.png'}
                     alt={product.name}
                     className="mainInfo__img"
                   />
