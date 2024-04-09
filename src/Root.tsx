@@ -17,7 +17,11 @@ import { PaintTinting } from './pages/paint.tinting';
 import { PaintPage } from './pages/paint.page';
 
 export const Root = () => (
-  <Router>
+  <Router
+    basename={process.env.NODE_ENV === 'production'
+      ? '/react-vite_decor-store/'
+      : '/'}
+  >
     <GlobalProvider>
       <Routes>
         <Route path="/" element={<App />}>

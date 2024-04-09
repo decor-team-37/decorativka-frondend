@@ -66,7 +66,7 @@ export const DetailsPage = () => {
         settings: {
           slidesToShow: 3,
           vertical: false,
-          centerPadding: '50px',
+          centerPadding: '0',
         },
       },
     ],

@@ -26,7 +26,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
     return () => {
-      setTimeout(() => setIsOpen(false), 100);
+      setTimeout(() => setIsOpen(false), 200);
     };
   };
 
