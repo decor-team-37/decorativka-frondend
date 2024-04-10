@@ -100,19 +100,19 @@ export const DetailsPage = () => {
 
             <div className="product-page__media-content">
               <img
-                src={selectService?.img[imgIndex]}
-                alt={`${selectService?.name}-img-${imgIndex + 1}`}
+                src={`.${selectService?.img[imgIndex]}`}
+                alt={`.${selectService?.img[imgIndex]}`}
                 className="product-page__selected-img"
               />
 
               <div className="product-page__carousel">
                 <div className="product-page__slider">
                   <Slider ref={sliderRef} {...settings}>
-                    {selectService?.img.map((imgUrl, i) => (
+                    {selectService?.img.map((imgUrl) => (
                       <div key={imgUrl}>
                         <img
-                          src={imgUrl}
-                          alt={`img-${i}`}
+                          src={`.${imgUrl}`}
+                          alt={`.${imgUrl}`}
                           className="product-page__slider-item"
                         />
                       </div>

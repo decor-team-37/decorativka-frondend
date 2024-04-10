@@ -1,17 +1,16 @@
 {
-  "homepage": "https://decor-team-37.github.io/decorativka-frontend/",
-  "name": "decorativka-frontend",
+  "homepage": "https://no4kar.github.io/react-vite_decor-store",
+  "name": "react-vite_decor-store",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "clean": "npm cache clean --force",
     "build": "tsc && vite build --mode production",
+    "clean": "npm cache clean --force",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && npm run lint-css",
     "lint-css": "stylelint './src/**/*.{scss,css}'",
     "preview": "vite preview --port 5173",
-    "format": "prettier --write './src/**/*.{ts,tsx}'",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
