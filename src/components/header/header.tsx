@@ -35,7 +35,7 @@ export const Header: React.FC<Props> = ({ isMenu, toggleMenu }) => {
       <div className="header__content content">
         <nav className="header__nav">
           <Link to="/">
-            <img src="../../../icons/logo.svg" alt="logo" className="logo" />
+            <img src="./icons/logo.svg" alt="logo" className="logo" />
           </Link>
 
           <ul className="header__categorys">

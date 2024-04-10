@@ -19,7 +19,11 @@ export const ProductCard: React.FC<Props> = memo(({ product }) => {
     <div className="card" key={id}>
       <div className="card__img-container">
         <div className="card__products">
-          <img src={img[0]} alt={name} className="card__img" />
+          <img
+            src={img[0]}
+            alt={img[0]}
+            className="card__img"
+          />
         </div>
 
         <button
