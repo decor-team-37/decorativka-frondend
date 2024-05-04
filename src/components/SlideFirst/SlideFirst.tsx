@@ -4,7 +4,7 @@ import React from 'react';
 import './SlideFirst.scss';
 import { SlideData } from '../../types/SlideData';
 import { Button } from '../Button';
-import { ControlsButtons } from '../ControlsButtons';
+import { Option, SliderButtons } from '../SliderButtons';
 import { pageLink } from '../../constants/pageLinks';
 import { getPathLink } from '../../helpers/getPathLink';
 
@@ -29,10 +29,10 @@ export const SlideFirst: React.FC<Props> = ({
         <h4 className="slide-first__label">{slide.label}</h4>
 
         <div className="slide-first__control">
-          <ControlsButtons
-            color="white"
-            handleBtnNext={handleBtnNext}
-            handleBtnPrev={handleBtnPrev}
+          <SliderButtons
+            onNext={handleBtnNext}
+            onPrev={handleBtnPrev}
+            option={Option.MAIN_SCREEN}
           />
         </div>
 

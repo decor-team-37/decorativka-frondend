@@ -36,13 +36,30 @@
   }
 
   &--h4 {
-    color: $white-text-color;
-    text-transform: uppercase;
-
     @extend %h4-style;
 
     @include on-desktop {
       font-size: 16px;
     }
+
+    &-main {
+      color: $main-black;
+    }
+  }
+
+  &--light {
+    @extend %title;
+  }
+
+  &--body-text {
+    @extend %body-text;
+  }
+
+  &--micro {
+    @extend %micro;
+  }
+
+  &--secondary-color {
+    color: $secondary-color;
   }
 }

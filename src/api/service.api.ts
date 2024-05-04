@@ -1,14 +1,24 @@
 import { client } from '../utils/fetchClient';
 import services from '../../public/data/services.json';
-import { ServiceProducts } from '../types/ServiceProducts/ServiceProducts';
+import { ServiceCategory, TyService } from '../types/Services/Services';
 import { MyForm } from '../types/MyForm';
+import { wait } from '../helpers/common.func';
+import { initialDelayLoader } from '../constants/initialDelayLoader';
 
 export function getServices() {
-  return services as ServiceProducts[];
+  return wait<TyService[]>(initialDelayLoader, () => services);
 }
 
-export function getServiceById(id: number) {
-  return (services as ServiceProducts[]).find(service => service.id === id);
+export function getServiceById(items: TyService[], id: number) {
+  return items.find(item => item.id === id);
+}
+
+export function getServiceByCategory(
+  items: TyService[],
+  categoryId: ServiceCategory,
+) {
+  return items
+    .filter(item => item.categoryId === categoryId);
 }
 
 export function getSendForm(forms: MyForm) {
